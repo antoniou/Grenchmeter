@@ -1,0 +1,6 @@
+# File-type: text/wl-spec
+# File-version: 1.2
+
+# WL Unit ID<tab>Composite type<tab>Times this unit<tab>Job Type<Tab>Site structure type<Tab>Total # of jobs per unit<tab>Detailed Site structure<Tab>Arrival time distribution<Tab>Other info
+#ID	GeneratorType	Times	UnitType	SiteType	Total	SiteInfo	ArrivalTimeDistr	OtherInfo
+?	composite	1	DAG	-	-	-	Poisson(5000)	ExternalFile=dag1.xin

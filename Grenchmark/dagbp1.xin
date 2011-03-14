@@ -1,0 +1,95 @@
+# workload params
+RandomWorkload=true
+Submitter0=wrapper_scripts/condor_dag_wrapper_remote.sh ${JDF} corina statia1-dual.grid.pub.ro
+Submitter1=wrapper_scripts/karajan_wrapper_remote.sh ${JDF} corina statia1-dual.grid.pub.ro
+Submitter2=wrapper_scripts/karajan_wrapper_remote.sh ${JDF} corina statia1-dual.grid.pub.ro
+Submitter3=wl-exec-dagman.py ${JDF} --threads=30 
+Submitter4=wl-exec-dagman.py ${JDF} --threads=30 
+#WLFileExtension=.dagman_default
+WLFileExtensions=.dagman,_k.xml,_k2.xml,.dagman_default,.dagman2_default
+CompositeFileFormats=dagman,karajan,karajan,default,default
+
+
+#WLFileExtensions=.dagman,_k.xml
+#CompositeFileFormats=dagman,karajan
+
+
+# number of composite structures generated
+NCompositeItems=1
+
+# for each composite structure
+#    DAG-specific params
+#Sequence ParallelSplit FromSTG
+#### WL-3-2-2-1
+#GraphTypesWithWeights=Sequence
+#### WL-3-2-2-2
+GraphTypesWithWeights=ParallelSplit
+#### WL-3-2-3-4
+#GraphTypesWithWeights=LayerSameProb
+
+#Params.TaskSameProb.NTasksWithWeights=10,20,30,40,50
+#Params.TaskSameProb.NTasksWithWeights= 50/50,100/30,500/15,1000/5
+#Params.TaskSameProb.NTasksWithWeights= 50/50,70/20,100/10,200/15,500/5
+#Params.TaskSameProb.NTasksWithWeights= 30/30,40/40,50/30
+Params.Sequence.NTasksWithWeights= 30/30,40/40,50/30
+#Params.Sequence.NTasksWithWeights= 3
+
+
+#Params.TaskSamePred.NTasksWithWeights=10,20,30,40,50
+#Params.TaskSamePred.NTasksWithWeights=2,2,3,4,5
+#Params.TaskSamePred.NTasksWithWeights= 50/50,70/20,100/10,200/15,500/5
+#Params.ParallelSplit.NBranchesWithWeights= 4,5
+#Params.ParallelSplit.MinTasksPerBranchWithWeights=7
+#Params.ParallelSplit.MaxTasksPerBranchWithWeights=10
+Params.ParallelSplit.NBranchesWithWeights= 30/30,40/40/50/30
+Params.ParallelSplit.MinTasksPerBranchWithWeights=1
+Params.ParallelSplit.MaxTasksPerBranchWithWeights=1
+
+
+#    composite application random filling
+AppsWithWeights=sser
+
+#sser.Exe=/tmp/simple_exe
+sser.Exe=/tmp/ssert
+#sser.Exe=/net/statia1-dual.grid.pub.ro/home/corina/tmp/ssert
+#sser.ParKSizes=0,32,128,512
+sser.ParKSizes=0
+#sser.ParKSuperSizes=0,16,32,64
+sser.ParKSuperSizes=0
+#sser.ParSupersteps=1,2,5,10,20
+sser.ParSupersteps=1,2,5,10
+sser.ParMemoryKItems=10,25,50,100
+sser.ParMemoryElementsPerItem=3,4,10,100
+sser.ParComputationPerMemoryItem=0,150000,300000
+#sser.RunTimeInMinutes=10,12,15
+sser.RunTimeInMinutes=0,1,2
+
+smpi1.Exe=/tmp/smpi1t
+smpi1.ParKSizes=0,32,128,512
+smpi1.ParKSuperSizes=0,16,32,64
+smpi1.ParSupersteps=1,2,5,10,20
+smpi1.ParMemoryKItems=10,25,50,100
+smpi1.ParMemoryElementsPerItem=3,4,10,100
+smpi1.ParXChangeElementsPerStep=100,500,1000
+smpi1.ParComputationPerMemoryItem=2,10
+smpi1.RunTimeInMinutes=10,12,15
+
+smpi1.RandomWorkload=true
+# overwrite default application
+smpi1.Application=smpi1t-gm
+smpi1.AppBaseDir=/tmp
+# overwrite default submitter
+smpi1.Submitter=krunner -l DEBUG -g -e -o -f ${JDF}
+# give different weights if you some site types to be preferred
+smpi1.SiteTypesWithWeights=unordered/50;ordered/50
+# give different weights if you want the components to be preferentially placed at a specific site
+smpi1.SitesWithWeights=fs1;fs2;fs3;fs4
+# detailed component preference description
+smpi1.NComponentsWithWeights=1
+# detailed cpus/app preference description
+smpi1.TotalCPUsWithWeights=2;4;5;8;10;16;20;32;40;48;56;64;128
+# split should be exact?
+smpi1.EqualCPUsPerComponent=false
+# job component size restrictions
+smpi1.MinComponentSize=2
+smpi1.MaxComponentSize=32

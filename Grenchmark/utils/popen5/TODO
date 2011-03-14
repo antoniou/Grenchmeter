@@ -1,0 +1,10 @@
+
+* Add a kill method. 
+
+
+* Perhaps support for managing a whole flock of subprocesses. Wish
+  from Guido. 
+
+
+* Support for managing "daemon" processes. Wish from Guido. 
+

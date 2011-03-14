@@ -1,0 +1,21 @@
+<jsdl:JobDefinition xmlns="http://www.example.org/"
+xmlns:jsdl="http://schemas.ggf.org/jsdl/2005/11/jsdl"
+xmlns:jsdl-posix="http://schemas.ggf.org/jsdl/2005/11/jsdl-posix"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><jsdl:JobDescription>
+<jsdl:Application>
+<jsdl:ApplicationName>sser12176431292321142337</jsdl:ApplicationName>
+<jsdl-posix:POSIXApplication>
+<jsdl-posix:Executable>C:\MyResearch\ec2\swf.o</jsdl-posix:Executable>
+<jsdl-posix:Argument>-m</jsdl-posix:Argument>
+<jsdl-posix:Argument>0</jsdl-posix:Argument>
+<jsdl-posix:Argument>-t</jsdl-posix:Argument>
+<jsdl-posix:Argument>50</jsdl-posix:Argument>
+<jsdl-posix:Argument>--verbose</jsdl-posix:Argument>
+<jsdl-posix:Output>C:\workspace\HPDC2009_EC2_Space_Shared\trace_gen\gmark_trace_das\out-das3-fs3\jdfs\jdf-0\0-0-49/49-1\swf0-0-49-49-00.out</jsdl-posix:Output>
+<jsdl-posix:Error>C:\workspace\HPDC2009_EC2_Space_Shared\trace_gen\gmark_trace_das\out-das3-fs3\jdfs\jdf-0\0-0-49/49-1\swf0-0-49-49-00.err</jsdl-posix:Error>
+<jsdl-posix:Environment name="GLOBUS_DUROC_SUBJOB_INDEX">0</jsdl-posix:Environment>
+<jsdl-posix:Environment name="LD_LIBRARY_PATH">/usr/local/globus/globus-3.2/lib/</jsdl-posix:Environment>
+<jsdl-posix:Environment name="LD_LIBRARY_PATH">/usr/local/lib</jsdl-posix:Environment>
+</jsdl-posix:POSIXApplication>
+</jsdl:Application>
+</jsdl:JobDescription></jsdl:JobDefinition>

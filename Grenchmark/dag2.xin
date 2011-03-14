@@ -1,0 +1,68 @@
+# workload params
+RandomWorkload=true
+Submitter=wl-exec.py ${JDF}
+
+# number of composite structures generated
+NCompositeItems=3
+
+# for each composite structure
+#    DAG-specific params
+#TaskSamePred TaskSameProb LayerSameProb LayerSamePred FromSTG
+GraphTypesWithWeights=LayerSamePred/10;LayerSameProb/5;TaskSamePred;TaskSameProb
+STGFiles=stgs/*.stg
+
+Params.TaskSameProb.NTasksWithWeights=10,20,30,40,50
+Params.TaskSameProb.pWithWeights=0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5
+
+Params.TaskSamePred.NTasksWithWeights=10,20,30,40,50
+Params.TaskSamePred.NConnectWithWeights=1,3,5
+
+Params.LayerSameProb.NLayersWithWeights=(2, 10)
+Params.LayerSameProb.NLayerTasksWithWeights=(1, 20)
+Params.LayerSameProb.pWithWeights=0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5
+
+Params.LayerSamePred.NLayersWithWeights=(2, 10)
+Params.LayerSamePred.NLayerTasksWithWeights=(1, 20)
+Params.LayerSamePred.NConnectWithWeights=1,3,5
+
+#    composite application random filling
+AppsWithWeights=sser/5;smpi1
+
+sser.Exe=/tmp/ssert
+sser.ParKSizes=0,32,128,512
+sser.ParKSuperSizes=0,16,32,64
+sser.ParSupersteps=1,2,5,10,20
+sser.ParMemoryKItems=10,25,50,100
+sser.ParMemoryElementsPerItem=3,4,10,100
+sser.ParComputationPerMemoryItem=2,10
+sser.RunTimeInMinutes=10,12,15
+
+smpi1.Exe=/tmp/smpi1t
+smpi1.ParKSizes=0,32,128,512
+smpi1.ParKSuperSizes=0,16,32,64
+smpi1.ParSupersteps=1,2,5,10,20
+smpi1.ParMemoryKItems=10,25,50,100
+smpi1.ParMemoryElementsPerItem=3,4,10,100
+smpi1.ParXChangeElementsPerStep=100,500,1000
+smpi1.ParComputationPerMemoryItem=2,10
+smpi1.RunTimeInMinutes=10,12,15
+
+smpi1.RandomWorkload=true
+# overwrite default application
+smpi1.Application=smpi1t-gm
+smpi1.AppBaseDir=/tmp
+# overwrite default submitter
+smpi1.Submitter=krunner -l DEBUG -g -e -o -f ${JDF}
+# give different weights if you some site types to be preferred
+smpi1.SiteTypesWithWeights=unordered/50;ordered/50
+# give different weights if you want the components to be preferentially placed at a specific site
+smpi1.SitesWithWeights=fs1;fs2;fs3;fs4
+# detailed component preference description
+smpi1.NComponentsWithWeights=1
+# detailed cpus/app preference description
+smpi1.TotalCPUsWithWeights=2;4;5;8;10;16;20;32;40;48;56;64;128
+# split should be exact?
+smpi1.EqualCPUsPerComponent=false
+# job component size restrictions
+smpi1.MinComponentSize=2
+smpi1.MaxComponentSize=32

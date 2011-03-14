@@ -1,0 +1,22 @@
+<jsdl:JobDefinition xmlns="http://www.example.org/"
+    xmlns:jsdl="http://schemas.ggf.org/jsdl/2005/11/jsdl"
+    xmlns:jsdl-posix="http://schemas.ggf.org/jsdl/2005/11/jsdl-posix"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+  <jsdl:JobDescription>
+  
+    <jsdl:Application>
+      <jsdl:ApplicationName>mkdir</jsdl:ApplicationName>
+      <jsdl-posix:POSIXApplication>
+        <jsdl-posix:Executable>/bin/mkdir</jsdl-posix:Executable>
+        <jsdl-posix:Argument>/home/af10031/anonymos</jsdl-posix:Argument>
+        <jsdl-posix:Environment name="LD_LIBRARY_PATH">/usr/local/lib</jsdl-posix:Environment>
+        <jsdl-posix:Input>/dev/null</jsdl-posix:Input>
+        <jsdl-posix:Output>stdout.${JOB_ID}</jsdl-posix:Output>
+        <jsdl-posix:Error>stderr.${JOB_ID}</jsdl-posix:Error>
+      </jsdl-posix:POSIXApplication>
+    </jsdl:Application>
+    
+  </jsdl:JobDescription>
+  
+</jsdl:JobDefinition>

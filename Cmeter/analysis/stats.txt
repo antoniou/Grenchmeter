@@ -1,0 +1,72 @@
+EXEC TIME
+NItems =                      1000.000
+Sum    =                       973.239
+Avg    =                         0.973
+Sum^2  =                    947195.044
+SumSq  =                      7700.137
+N*SumSq=                   7700136.541
+Std-dev =                         2.600
+COV =                         2.671
+Diff   =                   6752941.497
+
+
+FILE TRANSFER
+NItems =                      1000.000
+Sum    =                       904.104
+Avg    =                         0.904
+Sum^2  =                    817404.789
+SumSq  =                       910.810
+N*SumSq=                    910809.978
+Std-dev =                         0.306
+COV =                         0.338
+Diff   =                     93405.189
+
+
+RESPONSE TIME
+NItems =                      1000.000
+Sum    =                    207399.816
+Avg    =                       207.400
+Sum^2  =               43014683677.915
+SumSq  =                  52596322.457
+N*SumSq=               52596322456.652
+Std-dev =                        97.935
+COV =                         0.472
+Diff   =                9581638778.737
+
+
+QWAIT TIME
+NItems =                      1000.000
+Sum    =                    126369.850
+Avg    =                       126.370
+Sum^2  =               15969338990.023
+SumSq  =                  20072304.872
+N*SumSq=               20072304872.169
+Std-dev =                        64.086
+COV =                         0.507
+Diff   =                4102965882.146
+
+
+SLOWDOWN
+NItems =                      1000.000
+Sum    =                    184858.012
+Avg    =                       184.858
+Sum^2  =               34172484640.912
+SumSq  =                  44989335.693
+N*SumSq=               44989335693.375
+Std-dev =                       104.056
+COV =                         0.563
+Diff   =               10816851052.463
+
+
+SSH
+NItems =                      1000.000
+Sum    =                     87429.324
+Avg    =                        87.429
+Sum^2  =                7643886695.201
+SumSq  =                   8543572.937
+N*SumSq=                8543572937.387
+Std-dev =                        30.010
+COV =                         0.343
+Diff   =                 899686242.186
+
+

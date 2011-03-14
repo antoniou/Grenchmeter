@@ -1,0 +1,9 @@
+<!-- File-type: xml/grid-desc -->
+<!-- Generator: WLDocHandlers v0.1 -->
+<grid-sites>
+	<!-- site id="fs0" location="fs0.das2.cs.vu.nl" machines="72" / -->
+	<site id="fs1" location="fs1.das2.liacs.nl" machines="32" />
+	<site id="fs2" location="fs2.das2.nikhef.nl" machines="32" />
+	<site id="fs3" location="fs3.das2.ewi.tudelft.nl" machines="32" />
+	<site id="fs4" location="fs4.das2.phys.uu.nl" machines="32" />
+</grid-sites>

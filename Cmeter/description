@@ -1,0 +1,22 @@
+		-----------------------
+		|KF-WEB-SERVER MACHINE|
+		-----------------------
+		  |		^
+		  |		|Requests the binary of the job
+   		  |		|to be executed on the cloud
+   		  V		|
+   		-------------  
+		|   CLOUD   |
+		-------------
+		
+C-meter spawns virtual machines, or is given a number of virtual machines, which then uses to execute the jobs of the workload.
+
+Given a job of the workload "x" it uses the ExecuteJob module to actually run the job on top of the virtual machine.
+ExecuteJob downloads the binary file of the job to be executed from the KF Web Server located outside the cloud
+ 
+ 
+ec2bd.py appears to be the central file, with which the execution of Cmeter starts.
+
+
+
+130.161.158.117', 3000: C-meter server

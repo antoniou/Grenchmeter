@@ -1,0 +1,6 @@
+include TODO
+include AUTHORS
+include pep.txt
+include _subprocess.c
+include test_subprocess.py
+include MANIFEST.in

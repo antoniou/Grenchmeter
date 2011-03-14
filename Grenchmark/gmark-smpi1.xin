@@ -1,0 +1,22 @@
+RandomWorkload=true
+
+# overwrite default application
+Application=smpi1t-gm
+AppBaseDir=/tmp
+
+# overwrite default submitter
+Submitter=krunner -l DEBUG -g -e -o -f ${JDF}
+
+# give different weights if you some site types to be preferred
+SiteTypesWithWeights=unordered/50;ordered/50
+# give different weights if you want the components to be preferentially placed at a specific site
+SitesWithWeights=fs1;fs2;fs3;fs4
+# detailed component preference description
+NComponentsWithWeights=1
+# detailed cpus/app preference description
+TotalCPUsWithWeights=2;4;5;8;10;16;20;32;40;48;56;64;128
+# split should be exact?
+EqualCPUsPerComponent=false
+# job component size restrictions
+MinComponentSize=2
+MaxComponentSize=32

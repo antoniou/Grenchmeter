@@ -1,0 +1,34 @@
+<jsdl:JobDefinition xmlns="http://www.example.org/"
+xmlns:jsdl="http://schemas.ggf.org/jsdl/2005/11/jsdl"
+xmlns:jsdl-posix="http://schemas.ggf.org/jsdl/2005/11/jsdl-posix"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><jsdl:JobDescription>
+<jsdl:Application>
+<jsdl:ApplicationName>/tmp\smpi1t-gm</jsdl:ApplicationName>
+<jsdl-posix:POSIXApplication>
+<jsdl-posix:Executable>/tmp\smpi1t-gm</jsdl-posix:Executable>
+<jsdl-posix:Argument>-n</jsdl-posix:Argument>
+<jsdl-posix:Argument>10</jsdl-posix:Argument>
+<jsdl-posix:Argument>-m</jsdl-posix:Argument>
+<jsdl-posix:Argument>500</jsdl-posix:Argument>
+<jsdl-posix:Argument>-s</jsdl-posix:Argument>
+<jsdl-posix:Argument>100</jsdl-posix:Argument>
+<jsdl-posix:Argument>-c</jsdl-posix:Argument>
+<jsdl-posix:Argument>2</jsdl-posix:Argument>
+<jsdl-posix:Argument>-x</jsdl-posix:Argument>
+<jsdl-posix:Argument>500</jsdl-posix:Argument>
+<jsdl-posix:Argument>--noinput</jsdl-posix:Argument>
+<jsdl-posix:Argument>--nooutput</jsdl-posix:Argument>
+<jsdl-posix:Output>C:\workspace\Grenchmark\out\jdfs\jdf-1\1-0_smpi_1c\1-0-00\smpi1-1-0-00.out</jsdl-posix:Output>
+<jsdl-posix:Error>C:\workspace\Grenchmark\out\jdfs\jdf-1\1-0_smpi_1c\1-0-00\smpi1-1-0-00.err</jsdl-posix:Error>
+<jsdl-posix:Environment name="GLOBUS_DUROC_SUBJOB_INDEX">0</jsdl-posix:Environment>
+<jsdl-posix:Environment name="LD_LIBRARY_PATH">/usr/local/globus/globus-3.2/lib/</jsdl-posix:Environment>
+<jsdl-posix:Environment name="LD_LIBRARY_PATH">/usr/local/lib</jsdl-posix:Environment>
+</jsdl-posix:POSIXApplication>
+</jsdl:Application>
+<jsdl:DataStaging>
+<jsdl:FileName>C:\workspace\Grenchmark\out\jdfs\jdf-1\1-0_smpi_1c\1-0-00\__empty_file__</jsdl:FileName>
+<jsdl:Source>
+<jsdl:URI>C:\workspace\Grenchmark\out\jdfs\jdf-1\1-0_smpi_1c\1-0-00\__empty_file__</jsdl:URI>
+</jsdl:Source>
+</jsdl:DataStaging>
+</jsdl:JobDescription></jsdl:JobDefinition>

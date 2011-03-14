@@ -1,0 +1,63 @@
+## start with * for multivalued lines, e.g.
+## *Key1=Val1,Key2=Val2
+
+# ibis workload parameters
+
+RandomWorkload=true
+
+# maximum number of jobs to be generated
+NJobs=10
+
+# overwrite default submitter with this one
+Submitter=irunner -e -o -f ${JDF}
+
+# give different weights if you some site types to be preferred
+SiteTypesWithWeights=unordered/50;ordered/50
+# give different weights if you want the components to be preferentially placed at a specific site
+SitesWithWeights=fs1;fs2;fs3;fs4
+# detailed component preference description
+NComponentsWithWeights=1/50;3/16.2;5/5;10;15;20;30;2/10;4/10;8;16;32
+# detailed cpus/app preference description
+TotalCPUsWithWeights=5;10;15;20;30;8;16;32;40;48;56;64
+# split should be exact?
+EqualCPUsPerComponent=false
+# job component size restrictions
+MinComponentSize=4
+MaxComponentSize=32
+
+# general directory information
+IbisAppsDir=/home/koala5/ibis/ibis_/
+IbisLibDir=/usr/local/package/ibis-1.1
+JavaHomeDir=/usr/local/sun-java/jdk1.4
+JavaMaxMemoryLimitMB=800
+
+# ibis parameters (all needed -D java parameters)
+ibis.name_server.host=fs3.das2.ewi.tudelft.nl
+ibis.name_server.port=18463
+ibis.name_server.key=${JOB_ID}
+ibis.pool.total_hosts=${NPROCS}
+
+# 1. specify all apps you want to have in the workload, from:
+#    GMI:ACP, GMI:ASP, GMI:FFT1D, GMI:LEQ, GMI:QR, GMI:TSP
+#    Ibis:Cell1D, Ibis:SOR
+#    RMI:ACP, RMI:ASP, RMI:BarnesHutt, RMI:FFT1D, RMI:LEQ, RMI:QR, 
+#      RMI:Radix, RMI:SOR, RMI:TSP, RMI:Water
+#    Satin:AdaptInt, Satin:BarnesHutt, Satin:BarnesHutt-Inline, Satin:Checkers, 
+#      Satin:Compress, Satin:Cover, Satin:FFT1D, Satin:IDA, Satin:Knapsack, 
+#      Satin:NQueens, Satin:Paraffins, Satin:PrimFact, Satin:Raytracer, 
+#      Satin:SAT, Satin:TSP, Satin:TSP-Tuples
+#   ---- OR ----
+#   Satin:*, Ibis:*, RMI:*, GMI:* -- any application from the Satin/Ibis/RMI/GMI set
+#   ---- OR ----
+#   *:SOR -- any SOR implementation from the Satin/Ibis/RMI/GMI set
+#   ---- OR ----
+#   * -- any application
+#
+# 2. give different weights if you some site types to be preferred
+#
+#AppsWithWeights=*/50;*:SOR/20;RMI:TSP/2.5;GMI:TSP/2.5;Satin:TSP/2.5;Satin:TSP-Tuples/2.5;RMI:Water/10;RMI:BarnesHutt/3.5;Satin:BarnesHutt;Satin:BarnesHutt-Inline/5.5;Satin:NQueens/10;Satin:Checkers/10;Satin:Paraffins/10
+AppsWithWeights=Satin:NQueens
+
+# SelectionMethod can be one of: Random/R, WeightedRandom/WR, RoundRobin/RR, WeightedRoundRobin/WRR
+SelectionMethod=RoundRobin
+

@@ -1,0 +1,19 @@
+# File-type: text/wl-spec
+# File-version: 1.2
+
+# WL Unit ID<tab>Composite type<tab>Times this unit<tab>Job Type<Tab>Site structure type<Tab>Total # of jobs per unit<tab>Detailed Site structure<Tab>Arrival time distribution<Tab>Other info
+#ID	GeneratorType	Times	UnitType	SiteType	Total	SiteInfo	ArrivalTimeDistr	OtherInfo
+#	unitary	5	sser	single	1	*:?	C(1000)	-
+#1	composite	1	DAG	-	-	-	Poisson(5000)	ExternalFile=dag1.xin
+#10	unitary	1	wl:ibis	-	1	-	Poisson(5000)	ExternalFile=ibis1.xin
+#1	unitary	1	smpi1	single	1	*:?	Poisson(120000)	StartAt=30,ExternalFile=gmark-smpi1.xin
+0	unitary	1000	sser	single	1	*:?	Poisson(500)	StartAt=0
+#1	10	sser	unordered	2	-	N(500,200)	NSites=2,DifferentSites=false
+#2	sser	4	ordered	fs3:2,fs2:1,fs1:1	1	Poisson(500)	-
+#?	1	sser	semi-ordered	5	fs3:2,*:1	LogNorm(10,5)	NSites=3,DifferentSites=true
+#?	1	fake	semi-ordered	5	fs3:2,*:1	Weibull(2000,0.5)	NSites=3,DifferentSites=true
+#?	5	wl:poisson	-	-	-	Poisson(500)	RandomWorkload=true,NJobs=10,NComponents=2;8,ComponentSize=4;8
+#?	2	wl:poisson	-	-	-	Poisson(500)	RandomWorkload=false,NComponents=4-8,ComponentSize=8;16
+#?	1	wl:poisson	-	-	-	Poisson(500)	ExternalFile=poisson1.in
+#?	2	wl:poisson	-	-	-	Poisson(500)	RandomWorkload=false,NComponents=4;8,ComponentSize=8;16,Submitter=krunner,Application=findpi-gm
+#1	2	wl:ibis	-	-	-	Poisson(5000)	ExternalFile=ibis1.in

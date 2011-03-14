@@ -1,0 +1,6 @@
+# File-type: text/wl-spec
+# File-version: 1.2
+
+# WL Unit ID<tab>Composite type<tab>Times this unit<tab>Job Type<Tab>Site structure type<Tab>Total # of jobs per unit<tab>Detailed Site structure<Tab>Arrival time distribution<Tab>Other info
+#ID	GeneratorType	Times	UnitType	SiteType	Total	SiteInfo	ArrivalTimeDistr	OtherInfo
+333	unitary	5	exe	single	1	*:?	Poisson(1000)	cmdline=javablu -o -p,x=y
