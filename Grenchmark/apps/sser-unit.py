@@ -257,7 +257,7 @@ def generateJobInfo( UnitDir, UnitID, JobIndex, WLUnit, SubmitDurationMS ):
     #InfoDic['submitCommand'] = 'wrapper_scripts/condor_submit_wrapper.sh %s' % InfoDic['jdf']
     absPath = os.path.abspath(InfoDic['jdf'])
     InfoDic['jdf'] = absPath
-    InfoDic['submitCommand'] = 'python ../Cmeter/ec2br/ec2br.py -p 3000 -j %s' % absPath
+    InfoDic['submitCommand'] = 'python ../Cmeter/ec2br/ec2br.py -p 3000 -u localhost -j %s' % absPath
     
     try:
         Name = WLUnit['arrivaltimeinfo'][0]

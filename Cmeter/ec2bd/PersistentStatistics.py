@@ -2,7 +2,7 @@ import sys, time, datetime, os
 from sqlite3 import dbapi2 as sqlite
 
 import threading 
-
+import logging
 import AISQLiteUtils
 
 class DatabaseStatistics:
@@ -28,7 +28,6 @@ class DatabaseStatistics:
 #                                stats.job_execution_time,
 #                                stats.file_transfer_time,
 #                                stats.execution_machine  
-                                
                                 
     def getStatistics(self, job_name):
             self.lock.acquire()
@@ -124,7 +123,7 @@ class DatabaseStatistics:
     def dumpStatisticsToDb(self):
         conn = AISQLiteUtils.CMySQLConnection('job_stats.db3')
         cursor = conn.getCursor()
-        print "dumping statistics to DB, total number of statistics is %d " % len(self.statistics)
+        print "Dumping statistics to DB, total number of statistics is %d " % len(self.statistics)
         try:
             for jobName,stats in self.statistics.items():
                 buffer  = []
@@ -161,31 +160,52 @@ class JobStatistics:
         self.job_name=job_name
 
 def init_statistics_tables():
-        DB = AISQLiteUtils.CMySQLConnection('job_stats.db3')
+        DB_Name='job_stats.db3'
+        logging.debug("Creating Database %s" % DB_Name)
+        DB = AISQLiteUtils.CMySQLConnection(DB_Name)
         cursor = DB.getCursor()
+        
+        logging.debug("Creating table Stats")
         cursor.execute("""DROP TABLE IF EXISTS 'Stats'""")
         cursor.execute("""
             CREATE TABLE 'Stats' (
-             'job_name' varchar(1000) PRIMARY KEY UNIQUE,
-             'job_arrival' FLOAT unsigned default NULL,
-              'job_removed_from_queue' FLOAT unsigned default NULL,
-              'resource_scheduling_algorithm_overhead' FLOAT unsigned default NULL,
-               'ssh_session_begin' FLOAT unsigned default NULL,
-               'ssh_open_conn_begin' FLOAT unsigned default NULL,
-               'ssh_open_conn_end' FLOAT unsigned default NULL,
-               'ssh_execute_begin' FLOAT unsigned default NULL,
-               'ssh_execute_end' FLOAT unsigned default NULL,
-                'ssh_close_conn_begin' FLOAT unsigned default NULL,
-                'ssh_close_conn_end' FLOAT unsigned default NULL,
-                'ssh_session_end' FLOAT unsigned default NULL,
-              'job_statistics_received' FLOAT unsigned default NULL,
-              'overall_execution_time' FLOAT unsigned default NULL,
-              'job_execution_time' FLOAT unsigned default NULL,
-              'file_transfer_time' FLOAT unsigned default NULL,
-              'execution_machine' varchar(1000) default NULL
+             'job_name' varchar(1000) PRIMARY KEY UNIQUE,                            
+             'job_arrival' FLOAT unsigned default NULL,                              
+              'job_removed_from_queue' FLOAT unsigned default NULL,                  
+              'resource_scheduling_algorithm_overhead' FLOAT unsigned default NULL,  
+               'ssh_session_begin' FLOAT unsigned default NULL,                      
+               'ssh_open_conn_begin' FLOAT unsigned default NULL,                    
+               'ssh_open_conn_end' FLOAT unsigned default NULL,                      
+               'ssh_execute_begin' FLOAT unsigned default NULL,                      
+               'ssh_execute_end' FLOAT unsigned default NULL,                        
+                'ssh_close_conn_begin' FLOAT unsigned default NULL,                  
+                'ssh_close_conn_end' FLOAT unsigned default NULL,                    
+                'ssh_session_end' FLOAT unsigned default NULL,                       
+              'job_statistics_received' FLOAT unsigned default NULL,                 
+              'overall_execution_time' FLOAT unsigned default NULL,                  
+              'job_execution_time' FLOAT unsigned default NULL,                      
+              'file_transfer_time' FLOAT unsigned default NULL,                      
+              'execution_machine' varchar(1000) default NULL                         
               )
             """)
         DB.commit()   
         DB.close()
 
-init_statistics_tables()
+
+#             'job_name' varchar(1000) PRIMARY KEY UNIQUE,                            # 0
+#             'job_arrival' FLOAT unsigned default NULL,                              # 1
+#              'job_removed_from_queue' FLOAT unsigned default NULL,                  # 2
+#              'resource_scheduling_algorithm_overhead' FLOAT unsigned default NULL,  # 3
+#               'ssh_session_begin' FLOAT unsigned default NULL,                      # 4
+#               'ssh_open_conn_begin' FLOAT unsigned default NULL,                    # 5
+#               'ssh_open_conn_end' FLOAT unsigned default NULL,                      # 6
+#               'ssh_execute_begin' FLOAT unsigned default NULL,                      # 7
+#               'ssh_execute_end' FLOAT unsigned default NULL,                        # 8
+#                'ssh_close_conn_begin' FLOAT unsigned default NULL,                  # 9
+#                'ssh_close_conn_end' FLOAT unsigned default NULL,                    # 10
+#                'ssh_session_end' FLOAT unsigned default NULL,                       # 11
+#              'job_statistics_received' FLOAT unsigned default NULL,                 # 12
+#              'overall_execution_time' FLOAT unsigned default NULL,                  # 13
+#              'job_execution_time' FLOAT unsigned default NULL,                      # 14
+#              'file_transfer_time' FLOAT unsigned default NULL,                      # 15
+#              'execution_machine' varchar(1000) default NULL                         # 16

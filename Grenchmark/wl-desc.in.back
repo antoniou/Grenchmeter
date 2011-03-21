@@ -17,3 +17,4 @@
 #?	1	wl:poisson	-	-	-	Poisson(500)	ExternalFile=poisson1.in
 #?	2	wl:poisson	-	-	-	Poisson(500)	RandomWorkload=false,NComponents=4;8,ComponentSize=8;16,Submitter=krunner,Application=findpi-gm
 #1	2	wl:ibis	-	-	-	Poisson(5000)	ExternalFile=ibis1.in
+#1	unitary	1	wl:swf	-	-	-	Poisson(500)	SWF.File=asdas, AppBaseDir=ad,Application=asda,Submitter=sdsa,NComponentsWithWeights=1

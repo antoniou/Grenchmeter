@@ -25,10 +25,13 @@ def forceSend(string, host, port):
         raise "COULD NOT SENT ...."
                    
 def main(argv):   
-	opts, args = getopt.getopt(argv, "p:j:c:", ["port=","jsdl=","cmd="])
+	opts, args = getopt.getopt(argv, "p:j:c:u:", ["port=","jsdl=","cmd=","url="])
 	cmdExists = False
 	
 	for opt, arg in opts:   
+		if opt in ("-u", "--url"):
+			url = arg
+			print "url %s" % url
 		if opt in ("-p", "--port"):
 			port = arg
 			print "port %s" % port
@@ -41,9 +44,9 @@ def main(argv):
 			cmdExists = True			
 
 	if cmdExists:
-         sent = forceSend("cmd:"+cmd, '10.149.3.254', int(port))
+         sent = forceSend("cmd:"+cmd, url, int(port))
 	else:
-         sent = forceSend(jsdlFile, '10.149.3.254', int(port))
+         sent = forceSend(jsdlFile, url, int(port))
 
 
 if __name__ == "__main__":

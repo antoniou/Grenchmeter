@@ -34,19 +34,19 @@ class StatsUpdater(workerpool.Job):
                 continue
             if keyVal[0] == 'jobExec':
                 jobExec = float(keyVal[1])
-#                print 'jobExec is %s' %  keyVal[1]
+                print 'jobExec is %s' %  keyVal[1]
             if keyVal[0] == 'fileTransfer':
                 fileTransfer = float(keyVal[1])
-#                print 'fileTransfer is %s' %  keyVal[1]            
+                print 'fileTransfer is %s' %  keyVal[1]            
             if keyVal[0] == 'overAllExec':
                 overAllExec = float(keyVal[1])
-#                print 'overAllExec is %s' %  keyVal[1]
+                print 'overAllExec is %s' %  keyVal[1]
             if keyVal[0] == 'jobName':
                 jobName = keyVal[1]
-                #print 'jobName is %s' %  keyVal[1]
+                print 'jobName is %s' %  keyVal[1]
             if keyVal[0] == 'instance':
                 instanceId = keyVal[1]
-#                print 'instance is %s' %  instanceId   
+                print 'instance is %s' %  instanceId   
                             
         job_statistics_received = time.time()
         arrivalTime = float(self.dbStats.getStatistics(jobName).job_arrival)
@@ -68,4 +68,6 @@ class StatsUpdater(workerpool.Job):
                                       jobExec,
                                       fileTransfer,
                                      None)    
-        self.resourceManager.updateResourcePolicyStatus(instanceId,response_time)        
+        
+        self.resourceManager.updateResourcePolicyStatus(instanceId,response_time)
+                

@@ -220,12 +220,19 @@ class ResourceManager:
             for instance in reservation.instances:
                 print instance.id + " -> " +instance.state
                 
+    def getResourcePolicyName(self):
+        return self.resourceSelectionPolicy.getName()
+                
     def getNextAvailableInstance(self):
         nextInstance = self.resourceSelectionPolicy.getNextResource()
         return (nextInstance.dns_name, nextInstance.id)
 
     def updateResourcePolicyStatus(self, instanceId, status):
-        self.resourceSelectionPolicy.updateResourceState(instanceId,status)
+        try:
+            self.resourceSelectionPolicy.updateResourceState(instanceId,status)
+        except:
+            #The updateResourcePolicyStatus is not made available with the chosen ResourcePolicy
+            pass
     
     def submitStatistics(self):
         self.stats.addToTotalResourceManagerConnectTime(self.profiler.getValue('resource_mng_connect'))

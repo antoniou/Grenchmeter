@@ -70,7 +70,6 @@ class JobSubmitter(workerpool.Job):
         #commandToExecuteTheJob = commandToExecuteTheJob + ' 1> ' + self.jobToSubmit.posixConstraints['Output']
         #commandToExecuteTheJob = commandToExecuteTheJob + ' 2> ' + self.jobToSubmit.posixConstraints['Error']
         
-        
         self.profiler.mark('resource_selection_algorithm')
         
         #Debug by using local machine, not VM instance
@@ -92,7 +91,8 @@ class JobSubmitter(workerpool.Job):
         
         # Command to be executed on the VM instance, to retrieve the appropriate job files and consequently run the job
         commandToExecute = 'python ' + self.jobToSubmit.applicationName +'/ExecuteJob.py -u "'+jobUrl + '" -e "'+ commandToExecuteTheJob + '" -f "'\
-                                     + filesToDownload + '" -j "'  + self.jobToSubmit.applicationName + '" -i "' + str(instanceId) + '"'
+                                     + filesToDownload + '" -j "'  + self.jobToSubmit.applicationName + '" -i "' + str(instanceId) \
+                                     + '" -c "' + cmeterDaemonUrl + '" -p "' + cmeterDaemonPort + '"'
         commandToExecute = commandToExecute + '\n'
         
         allCommand = wgetCommand + ';' + commandToExecute
@@ -117,7 +117,6 @@ class JobSubmitter(workerpool.Job):
             sshUtils.waitUntilConnected()
             executed = sshUtils.executeCommand(allCommand)
         self.ssh_execute_end = time.time()
-        
         
 #        self.profiler.mark('ssh_end')
     

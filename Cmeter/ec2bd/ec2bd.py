@@ -28,16 +28,19 @@ def main(argv):
             print "Reading configuration %s" % configFile
 
     #paramiko.util.log_to_file("ssh_logs.txt", paramiko.util.DEBUG)
+
+    # Read the configuration file/ create getters to retrieve the conf. options
+    configurationManager = ConfigurationManager.ConfigurationManager(configFile)
+    
+    # Start logging
+    logging.basicConfig(filename=configurationManager.getLogFileName(),level=logging.DEBUG)
     
     # Initialize statistic gathering
     stats = Statistics.Statistics()
     PersistentStatistics.init_statistics_tables()
     databaseStatistics = PersistentStatistics.DatabaseStatistics()
     
-    # Read the configuration file/ create getters to retrieve the conf. options
-    configurationManager = ConfigurationManager.ConfigurationManager(configFile)
     
-    logging.basicConfig(filename=configurationManager.getLogFileName(),level=logging.DEBUG)
     
     poolManager = ThreadPoolManager.ThreadPoolManager(configurationManager.getNumberOfThreadsInPool())
 

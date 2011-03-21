@@ -119,17 +119,18 @@ class CHistogram:
                     self.CDF[Value] = float(Counter) / self.NItems
         return self.CDF
 
-import Gnuplot, Gnuplot.funcutils
-hist = CHistogram()
-plotData=[]
-for i in range(0,100):
-    data=[]
-    data.append(i)
-    val = float(0.25*math.exp(-1*0.25*i)) 
-    data.append(val)
-    hist.addValue(val)
-    plotData.append(data)
-
-cdf = hist.computeCDF()
-for k,v in cdf.items():
-    print "%d -> %d" % (k,v)
+# What is this for????
+#import Gnuplot, Gnuplot.funcutils
+#hist = CHistogram()
+#plotData=[]
+#for i in range(0,100):
+#    data=[]
+#    data.append(i)
+#    val = float(0.25*math.exp(-1*0.25*i)) 
+#    data.append(val)
+#    hist.addValue(val)
+#    plotData.append(data)
+#
+#cdf = hist.computeCDF()
+#for k,v in cdf.items():
+#    print "%d -> %d" % (k,v)

@@ -1,8 +1,8 @@
 import sys, time, datetime, os, getopt
 from pysqlite2 import dbapi2 as sqlite
 
-if "..//utils" not in sys.path:
-    sys.path.append("..//utils")
+if "../utils" not in sys.path:
+    sys.path.append("../utils")
 
 import AISQLiteUtils
 import GnuplotUtils
@@ -68,6 +68,7 @@ def calculatResponseTimes(result_set):
 def calculateSlowDown(result_set): 
     slowdown = []
     for row in result_set:
+        # 1 is supposed to represent the mean execution time of the workload applications
         slowdown.append(max((row[12]-row[1])/max(row[14],1),1))
     return slowdown
 
@@ -92,8 +93,10 @@ def main(argv):
             print "db %s" % db
     
     if db == None:
+        print "Please supply an SQLite DB file."
         sys.exit(0)
     
+    # Get results from supplied database
     conn = AISQLiteUtils.CMySQLConnection(db)
     cursor = conn.getCursor()
     cursor.execute("select * from Stats")
@@ -103,11 +106,8 @@ def main(argv):
     result_set.sort(jobCompareSubmissionTime)
     response = calculatResponseTimes(result_set)
     slowdown = calculateSlowDown(result_set)
-    
     #tput = calculateThroughput(result_set)
-    
     qwait = calculateQWaitTimes(result_set)
-    
     
     
     # shift so that initial submission starts from 0
@@ -139,13 +139,11 @@ def main(argv):
     dumpToFile(new_result_set, response, 'response.dat')
     dumpToFile(new_result_set, slowdown, 'slowdown.dat')
     dumpToFile(new_result_set, qwait, 'qwait.dat')
-##    
-#    
     dumpStatisticsToFile("stats.txt", new_result_set, response , slowdown, qwait)
 #    GnuplotUtils.plotJobStats(new_result_set)
 #    GnuplotUtils.plotQueueWaitTime(new_result_set, qwait)
 #    GnuplotUtils.plotResponseTimes(new_result_set, response)`
-#    GnuplotUtils.plotSlowdowns(new_result_set, slowdown)
+    GnuplotUtils.plotSlowdowns(new_result_set, slowdown)
 #    GnuplotUtils.plotFileTransferTimes(new_result_set)
 #    GnuplotUtils.plotSshTimes(new_result_set)
 #    GnuplotUtils.plotCdf(histo.CDF)
@@ -196,6 +194,8 @@ def dumpStatisticsToFile(file,new_result_set,responseTimes , slowdownTimes, qwai
     qWaitTimes.doComputeStats()
     qWaitTimes.dump(fp)
     fp.write("\n\n")      
+    
+    
 #    throughput = CStats()
 #    fp.write("THROUGHPUT\n")
 #    for t in tput:

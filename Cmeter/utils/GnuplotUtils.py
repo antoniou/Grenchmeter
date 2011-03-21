@@ -80,7 +80,7 @@ def plotTPut(dataList,wsList):
     g.xlabel('Time')
     g.ylabel('Throughput')
     g.title('Throughput (Jobs/s)')
-    plot2 = Gnuplot.PlotItems.Data(plotData,using="1:2", with="lines lw 1 lc rgb \"black\"")  # No title
+    plot2 = Gnuplot.PlotItems.Data(plotData,using="1:2", with_="lines lw 1 lc rgb \"black\"")  # No title
     g.plot(plot2)
     g.hardcopy('tput.png', terminal='png')        
     raw_input('Please press return to continue...\n')
@@ -100,7 +100,7 @@ def plotCumul(dataList,wsList):
     g("set xtics nomirror out rotate by 90,graph -0.15 scale 2")
     g.ylabel('Jobs')
     g.title('Completed Jobs')
-    plot2 = Gnuplot.PlotItems.Data(plotData,using="1:2", with="lines lw 1 lc rgb \"black\"")  # No title
+    plot2 = Gnuplot.PlotItems.Data(plotData,using="1:2", with_="lines lw 1 lc rgb \"black\"")  # No title
     g.plot(plot2)
     g.hardcopy('jobs.png', terminal='png')        
     raw_input('Please press return to continue...\n') 
@@ -118,7 +118,7 @@ def plotJobExecTimes(data, xlabel, ylabel, title, fileName, xtics, ytics, isLogS
         g("set logscale y")
     g("set xtics 20 border in scale 3,2.5 nomirror out rotate by 90  offset character 0, 0, 0 font \"Arial,20\"")
     g("set title " + "\"" + title + "\"" + " font \"Arial,20\"")
-    plot2 = Gnuplot.PlotItems.Data(data,using="1:2", with=typeOfPlot)  # 
+    plot2 = Gnuplot.PlotItems.Data(data,using="1:2", with_=typeOfPlot)  # 
     g.plot(plot2)
     g.hardcopy(fileName, enhanced=1, color=0)
     #g.hardcopy(fileName, terminal='jpg')
@@ -172,7 +172,7 @@ def rawPlot(data,xlabel, ylabel, title, fileName):
     g.xlabel(xlabel)
     g.ylabel(ylabel)
     g.title(title)
-    plot2 = Gnuplot.PlotItems.Data(data,using="1:2", with="lines lw 1 lc rgb \"black\"")  # No title
+    plot2 = Gnuplot.PlotItems.Data(data,using="1:2", with_="lines lw 1 lc rgb \"black\"")  # No title
     g.plot(plot2)
     g.hardcopy(fileName, terminal='png')        
     raw_input('Please press return to continue...\n')    

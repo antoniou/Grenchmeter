@@ -3,8 +3,8 @@
 
 # WL Unit ID<tab>Composite type<tab>Times this unit<tab>Job Type<Tab>Site structure type<Tab>Total # of jobs per unit<tab>Detailed Site structure<Tab>Arrival time distribution<Tab>Other info
 #ID	GeneratorType	Times	UnitType	SiteType	Total	SiteInfo	ArrivalTimeDistr	OtherInfo
-0	unitary	1	sser	single	1	*:?	Poisson(500)	StartAt=0
-1	unitary	2	sser	single	1	*:?	Poisson(500)	StartAt=0
+0	unitary	1	sser	single	1	*:?	Poisson(1)	StartAt=0
+1	unitary	1	sser	single	1	*:?	Poisson(1)	-
 #1	unitary	1	exe	single	1	*:?	Poisson(1000)	Exe=/bin/mkdir,args=Nassos 
 
  

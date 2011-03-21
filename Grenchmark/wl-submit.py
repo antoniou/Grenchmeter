@@ -328,7 +328,7 @@ def runWL( OutputDir, XMLhandler, NPoolThreads, NoSubmit=0, NoBackground=0, OneF
         print "[Pool] Work request #%s added (id=%s, start time=%.3f)." % \
               (req.requestID, req.args[0]['id'], req.args[0]['startTime'])
         StdOutLock.release()
-        
+    
     #-- wait for all submissions to be completed
     submitThreadPool.wait()
     while 1:
@@ -342,7 +342,6 @@ def runWL( OutputDir, XMLhandler, NPoolThreads, NoSubmit=0, NoBackground=0, OneF
     
     EndSubmissionTime = time.time()
     NTotalJobsInQueue = len(submitThreadPool.workRequests)
-
 
     # should send to the database the 'onefile.out' and 'onefile.err' (not tested)
 
@@ -404,8 +403,6 @@ def main(argv):
         usage(os.path.basename(sys.argv[0]))
         sys.exit(2)
 
-    print "here 1"
-    
     NThreads = 5
     NoSubmit = 0
     OneFile = 0
@@ -473,13 +470,14 @@ def main(argv):
           ( time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(time.time())) ) 
         
     WorkloadDir = os.path.join(os.path.dirname(WorkloadFileName),"run")
-    print "Workload directory", WorkloadDir
     StartSubmissionTime, EndSubmissionTime, NTotalJobs, NTotalJobsInQueue = \
         runWL( WorkloadDir, handlerXML, NThreads, NoSubmit, NoBackground, OneFile, testid, projectid, testerid, starttime - time.time() )
     print "%s All done" % time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(time.time()))
     
     tstart = time.strftime('%H:%M:%S', time.gmtime(StartSubmissionTime))
     tend = time.strftime('%H:%M:%S', time.gmtime(EndSubmissionTime))
+    
+    
     print "------ SUBMISSION SUMMARY ---------"
     print "Started submission at %s" % tstart
     print "Ended submission at %s" % tend
