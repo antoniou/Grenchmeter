@@ -1,0 +1,112 @@
+[Instance1]
+ip_address = None
+dns_name = 10.141.3.170
+id = i-454B07D6
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance2]
+ip_address = None
+dns_name = 10.141.3.176
+id = i-45060751
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance3]
+ip_address = None
+dns_name = 10.141.3.142
+id = i-3E94083E
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance4]
+ip_address = None
+dns_name = 10.141.3.174
+id = i-37B606AB
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance5]
+ip_address = None
+dns_name = 10.141.3.175
+id = i-510C09C9
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance6]
+ip_address = None
+dns_name = 10.141.3.178
+id = i-554708A5
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance7]
+ip_address = None
+dns_name = 10.141.3.179
+id = i-536F093B
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance8]
+ip_address = None
+dns_name = 10.141.3.182
+id = i-3AE306D2
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance9]
+ip_address = None
+dns_name = 10.141.3.181
+id = i-413507FF
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance10]
+ip_address = None
+dns_name = 10.141.3.180
+id = i-57880986
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance11]
+ip_address = None
+dns_name = 10.141.3.169
+id = i-37490738
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance12]
+ip_address = None
+dns_name = 10.141.3.186
+id = i-352206F5
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance13]
+ip_address = None
+dns_name = 10.141.3.167
+id = i-3F5F06A4
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance14]
+ip_address = None
+dns_name = 10.141.3.166
+id = i-3FD206C3
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance15]
+ip_address = None
+dns_name = 10.141.3.168
+id = i-2F8306CF
+image_id = emi-1C8015A8
+type = m1.small
+
+[Instance16]
+ip_address = None
+dns_name = 10.141.3.177
+id = i-282F0608
+image_id = emi-1C8015A8
+type = m1.small
+
