@@ -46,7 +46,7 @@ import GrenchmarkController
 import analyze
 from ec2bd import Cmeter
 
-DEFAULT_CONFIG_FILE   = 'Cmeter/config/das4.config'
+DEFAULT_CONFIG_FILE   = 'Cmeter/config/one.config'
 DEFAULT_WORKLOAD_FILE = 'Grenchmark/wl-desc.in'
 WORKLOAD_OUTDIR       = 'wload_out'
 

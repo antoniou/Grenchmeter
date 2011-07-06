@@ -3,6 +3,7 @@ import time
 import os
 import operator
 
+import xmlrpclib
 import Timing
 import boto.ec2
 from boto.ec2.connection import EC2Connection
@@ -32,6 +33,29 @@ class ResourceManager:
 
     INSTANCE_FILE_NAME = './instances.in' 
     def __init__(self, resourceSpec, configurationManager, stats):
+        
+        self.initialization()     
+        self.connectToCloud()
+        if self.instancesFileExists():
+            self.loadInstancesFromFile(self.runningInstancesFile)
+                
+        image = self.buildAmiList()
+        self.profiler.mark("wait_for_all_instances_to_get_running")
+
+        # Run this specific image
+        self.runInstances(image, configurationManager.getKeyPairFile())
+        self.profiler.elapsed("wait_for_all_instances_to_get_running")
+        
+        self.calcNumOfComputingUnits()
+        
+        print "NUMBER OF INSTANCES=",len(self.vmInstances.values())
+        self.resourceSelectionPolicy = SequentialResourceSelectionPolicy(self.vmInstances.values())
+#        self.resourceSelectionPolicy = LoadBalancingResourceSelectionPolicy(self.vmInstances.values())
+#        self.resourceSelectionPolicy = PredictiveResourceSelectionPolicy(self.instances)
+        print "Using policy " + self.resourceSelectionPolicy.getName()
+        self.stats = stats
+        
+    def initialization(self):
         self.profiler = Timing.timeprofile()
         self.profiler.mark("resource_mng_connect")
         self.configurationManager =configurationManager
@@ -55,27 +79,14 @@ class ResourceManager:
         self.runningInstancesFile = configurationManager.getRunningInstancesFile()
         self.instanceWriteCount = 1
         
-        if self.runningInstancesFile != None and os.path.exists(self.runningInstancesFile):
-            self.loadInstancesFromFile(self.runningInstancesFile)
-            
-        self.connectToCloud()
-                
-        image = self.buildAmiList()
-        self.profiler.mark("wait_for_all_instances_to_get_running")
-
-        # Run this specific image
-        self.runInstances(image, configurationManager.getKeyPairFile())
-        self.profiler.elapsed("wait_for_all_instances_to_get_running")
+    def instancesFileExists(self):
+        if self.runningInstancesFile is None:
+            return False
+        if not os.path.exists(self.runningInstancesFile):
+            return False
         
-        self.calcNumOfComputingUnits()
-        
-        print "NUMBER OF INSTANCES=",len(self.vmInstances.values())
-        self.resourceSelectionPolicy = SequentialResourceSelectionPolicy(self.vmInstances.values())
-#        self.resourceSelectionPolicy = LoadBalancingResourceSelectionPolicy(self.vmInstances.values())
-#        self.resourceSelectionPolicy = PredictiveResourceSelectionPolicy(self.instances)
-        print "Using policy " + self.resourceSelectionPolicy.getName()
-        self.stats = stats
-        
+        return True
+    
     def calcNumOfComputingUnits(self):
         self._totalComputingUnits = 0
         for vm in self.vmInstances.values():
@@ -85,26 +96,38 @@ class ResourceManager:
         return self._totalComputingUnits
         
     def connectToCloud(self):
-        if self.configurationManager.getCloudName()=='Amazon':
-            print "Connecting to Amazon EC2:"
-            self.EC2Connection = boto.ec2.connect_to_region(self.configurationManager.getCloudRegion(),
+        cloudName = self.configurationManager.getCloudName()
+        if cloudName == 'Amazon':
+            connectToAmazonEC2()
+        elif cloudName == "Eucalyptus":
+            connectToEucalyptus()
+        elif cloudName == "OpenNebula":
+            connectToOpenNebula()
+        else:
+            print "ERROR: Wrong Cloud name: {0}".format(cloudName)
+            
+        self.profiler.elapsed("resource_mng_connect")
+        self.profiler.mark("resource_mng_change_region")
+        self.profiler.mark("resource_mng_get_images")     
+        
+    def connectToAmazonEC2(self):
+        print "Connecting to Amazon EC2:"
+        self.EC2Connection = boto.ec2.connect_to_region(self.configurationManager.getCloudRegion(),
                                                             aws_access_key_id=self.AWS_ACCESS_KEY_ID,
                                                             aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY)
-        else:
-            # DAS4 endpoint
-            region=boto.ec2.regioninfo.RegionInfo(name=self.configurationManager.getCloudRegion(),endpoint=self.configurationManager.getCloudUrl())
-            print "Connecting to Eucalyptus Cloud: "
-            self.EC2Connection = EC2Connection(aws_access_key_id=self.AWS_ACCESS_KEY_ID, 
+    def connectToEucalyptus(self):
+        region=boto.ec2.regioninfo.RegionInfo(name=self.configurationManager.getCloudRegion(),endpoint=self.configurationManager.getCloudUrl())
+        print "Connecting to Eucalyptus Cloud: "
+        self.EC2Connection = EC2Connection(aws_access_key_id=self.AWS_ACCESS_KEY_ID, 
                                                aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY,
                                                is_secure=False,
                                                region=region,
                                                port=self.configurationManager.getCloudPort(),
                                                path="/services/Eucalyptus")
             
-        self.profiler.elapsed("resource_mng_connect")
-        self.profiler.mark("resource_mng_change_region")
-        self.profiler.mark("resource_mng_get_images")     
-           
+    def connectToOpenNebula(self):
+        self.EC2Connection = xmlrpclib.ServerProxy('http://localhost:2633/RPC2')
+        
     ###########################################
     # Construct specification of resources, based on a 
     # comma-separated list of "attribute=value"
@@ -151,7 +174,7 @@ class ResourceManager:
                 instanceCount -= self.runningInstancesDic[instanceType]
                 if instanceCount > 0:
                     print "\tRunning image ",image," on ", instanceCount," instances of type ",instanceType
-                    instancesReserved = image.run(instanceCount, instanceCount, key_name=keypair_basename, instance_type=instanceType)
+                    instancesReserved = image.run(instanceCount, instanceCount, key_name = keypair_basename, instance_type=instanceType)
                     self.instances += instancesReserved.instances # merge all instances into self.instances
                     self.reservations.append(instancesReserved)
 
