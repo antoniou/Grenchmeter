@@ -4,6 +4,10 @@
 # several getter methods to retrieve the configuration
 #####################################################
 import ConfigParser
+import VMInstance
+
+import operator
+import time
 
 class ConfigurationManager:
     def __init__(self, configFile):
@@ -61,3 +65,75 @@ class ConfigurationManager:
     
     def getCloudName(self):
         return self.config.get(self.configSection, "Cloud_Name")
+    
+    def getEmail(self):
+        return self.config.get(self.configSection, "Email")
+    
+    def getRunningInstancesFile(self):
+        try:
+            return self.config.get(self.configSection, "Running_Instances_File")
+        except:
+            return None
+    
+    def terminateVMInstances(self):
+        try:
+            value = self.config.get(self.configSection,"Terminate_VM_Instances").lower()
+        except:
+            return True
+            
+        if value == 'false':
+            return False
+        elif value == 'true':
+            return True
+        else:
+            print "Invalid value for TerminateVMInstances configuration. Setting to default:True"
+            return True
+        
+class InstanceFileReader:
+    def __init__(self,configurationManager):
+        self.config = ConfigParser.ConfigParser()
+        self.instanceCount = 1
+        self.configurationManager = configurationManager
+        
+    def getID(self,section):
+        return self.config.get(section, "id")
+
+    def getImageID(self,section):
+        return self.config.get(section, "image_id")
+    
+    def getIPAddress(self,section):
+        return self.config.get(section, "ip_address")
+    
+    def getType(self,section):
+        try:
+            return self.config.get(section, "type")
+        except:
+            return None
+    
+    def getDNSName(self,section):
+        return self.config.get(section, "dns_name")
+
+    def getVMInstancesFromFile(self,fileName):
+        self.config.read(fileName)
+        instances = []
+        while True:
+            try:
+                instances.append(self.getNextInstance())
+            except :
+                break
+        return instances
+    
+    def getNextInstance(self):
+        section = "Instance{0}".format(self.instanceCount)
+        id = self.getID(section)
+        imageID = self.getImageID(section)
+        ipAddress = self.getIPAddress(section)
+        dnsName = self.getDNSName(section)
+        type = self.getType(section)
+        if type == None:
+            instance = VMInstance.VMInstance(None,self.configurationManager,id, imageID, ipAddress, dnsName)
+        else:
+            instance = VMInstance.VMInstance(None,self.configurationManager,id, imageID, ipAddress, dnsName, type)
+
+        self.instanceCount+=1
+        return instance

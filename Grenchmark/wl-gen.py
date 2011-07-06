@@ -158,8 +158,7 @@ import AIRandomUtils
 import WLDocHandlers
 import WLLoader
 import WLMain
-
-bForce = 0
+import FixedUtil
 
 # TODO : change this to 0 in final version
 if AIFinalVersion.IsFinalVersion == 0:
@@ -190,16 +189,12 @@ def version():
 
 def main(argv):                  
 
-    global WL_EXE_DIR
-    global NRandomTests
-    global bForce
-           
-    OneCharOpts = "hfo:r:s:w:j:d:"
+    OneCharOpts = "hfo:r:s:w:j:d"
     MultiCharList = [
         "help", "force", "outdir=", 
         "workload=", "sitesfile=", "jdfgen=", "duration=", 
         # here the params with no one char version
-        "version"
+        "version","arrival=",'useIDs='
         ]
         
     try:                                
@@ -213,9 +208,10 @@ def main(argv):
     DoGenerateRandom = 1
     NRandomTests = 5
     NComponents = 3
-    bForce = DefaultForce
     TestTypes = ["sser"]
     WorkloadDescriptionFileName = "wl-desc.in"
+    arrivalDistr = None
+    jobIDsFile = None
     
     SitesFileName = "grid-sites.xml"
     JDFGenName = "koala-jdf"
@@ -247,14 +243,14 @@ def main(argv):
             FileOrExit( os.path.join("jdfprint", "%s.py" % JDFGenName), 
                         "JDF generator (%s) " % JDFGenName )
             print "JDF Generator set to %s.\n" % JDFGenName
-        elif opt in ["-f", "--force"]: 
-            bForce = 1
         elif opt in ["-s", "--sitesfile"]: 
             SitesFileName = arg.strip()
             FileOrExit( SitesFileName, "site description" )
         elif opt in ["-w", "--workload"]: 
             WorkloadDescriptionFileName = arg.strip() 
             FileOrExit( WorkloadDescriptionFileName, "workload description" )
+        elif opt in ["--arrival"]:
+            arrivalDistr = WLDocHandlers.getArrivalTimeDistribution(arg)
         else:
             print "Unknown parameter", opt
     
@@ -304,21 +300,26 @@ def main(argv):
     KnownSiteNamesList = DictionaryOfSites.keys()
     print "Start getting a workload decription from", WorkloadDescriptionFileName
     ListOfDefs = WLDocHandlers.readWorkloadDescriptionFile( 
-                    WorkloadDescriptionFileName, 
-                    KnownJobNamesList, KnownWorkloadJobNamesList, 
-                    KnownSiteNamesList )
+                            WorkloadDescriptionFileName, 
+                            KnownJobNamesList, KnownWorkloadJobNamesList, 
+                            KnownSiteNamesList)
+    
+    
     if ListOfDefs:
         print "Got", len(ListOfDefs), "workload units from '%s'.\n" % WorkloadDescriptionFileName
         #print ListOfDefs
-    
+        
+#    for workloadDef in ListOfDefs:
+#        print ": ", workloadDef['arrivaltimeinfo'][1]
+        
     #--- Generate workload
     WLFileName = os.path.join( OutDir, "wl-to-submit.wl" ) 
     try:
         
         StartTime = time.time()
-        WLMain.generateWorkload( OutDir, WLFileName, ListOfDefs, SubmitDurationMS,
+        outInfo = WLMain.generateWorkload( OutDir, WLFileName, ListOfDefs, SubmitDurationMS,
                              AWLUnitGenLoader, AWLGenLoader, AJDFGenLoader, JDFGenNamesList, 
-                             DictionaryOfSites )
+                             DictionaryOfSites, arrivalDistr)
         EndTime = time.time()
         
         tstart = time.strftime('%H:%M:%S', time.gmtime(StartTime))
@@ -333,6 +334,7 @@ def main(argv):
         raise
     
     print "\n\nThank you for using Grenchmark!\n"
+    
     
     #lumpy.object_diagram()
     #lumpy.class_diagram()

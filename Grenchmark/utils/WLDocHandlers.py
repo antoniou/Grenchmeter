@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 """ Document handlers for the Grenchmark project. """
-
 __proggy = "WLDocHandlers";
 __rev = "0.1";
 __proggy_stamp__ = "%s v%s" % (__proggy, __rev);
@@ -41,6 +40,8 @@ WLSubmitWorkloadEntryName = 'workload'
 WLSubmitWorkloadKeys = ( 'version', 'name' )
 WLSubmitJobEntryName = 'job'
 WLSubmitJobKeys = ('id', 'name', 'description', 'jdf', 'composition-type', 'runTime', 'submitCommand')
+validConfigurationKeys = ('Util','Distr')
+defaultDistribution = 'C'
 
 WLDescTextFileMark = "text/wl-spec"
 
@@ -188,8 +189,8 @@ def writeSiteFile( OutFileName, DictionaryOfSites, GeneratorName = __proggy_stam
 ### based on http://www.rexx.com/~dkuhlman/pyxmlfaq.html
 ### need to get and install PyXML from http://sourceforge.net/projects/pyxml/
 class WorkloadSubmitSaxDocumentHandler(saxlib.HandlerBase):                 
-    def __init__(self, outfile):
-        
+    def __init__(self, outfile,dedicatedMode):
+        self.dedicatedMode = dedicatedMode
         self.outfile = outfile
         self.level = 0
         self.contentData = []
@@ -253,7 +254,13 @@ class WorkloadSubmitSaxDocumentHandler(saxlib.HandlerBase):
                 try:
                     if attrs.get(attrName) == None:
                         raise MyError(attrName)
+                    
                     CurrentApp[attrName] = attrs.get(attrName)
+                    
+                    if attrName == 'submitCommand':
+                        if self.dedicatedMode==True:
+                            CurrentApp[attrName]+=" --dedicated"
+                            
                 except:
                     print "*** ERROR! Could not find required %s attribute %s!" % ( WLSubmitJobEntryName, attrName )
                     AnyError = AnyError + 1
@@ -292,13 +299,13 @@ class WorkloadSubmitSaxDocumentHandler(saxlib.HandlerBase):
             self.contentData.append(chars[offset:offset+length])
             ##print ">>>>>", "found data", "'"+str(chars[offset:offset+length])+"'"
 
-def readWorkloadSubmitFile(inFileName):
+def readWorkloadSubmitFile(inFileName,dedicatedMode):
     """
     Reads workload submit files from XML format
     """
     outFile = sys.stdout
     # Create an instance of the Handler.
-    handler = WorkloadSubmitSaxDocumentHandler(outFile)
+    handler = WorkloadSubmitSaxDocumentHandler(outFile,dedicatedMode)
     # Create an instance of the parser.
     parser = saxexts.make_parser()
     # Set the document handler.
@@ -557,7 +564,7 @@ def getArrivalTimeDistribution( Text ):
 def textWorkloadDescriptionLine_ToUnitDef( ID, GeneratorType, NTimes, UnitType, SiteType, \
                             NTotalJobs, SiteInfo, ArrivalTimeDistr, OtherInfo, \
                             LineNo, iMaxID, UniqueIDs, \
-                            KnownJobNamesList, KnownWorkloadJobNamesList, KnownSiteNamesList ):
+                            KnownJobNamesList, KnownWorkloadJobNamesList, KnownSiteNamesList):
 # _v1.1: composite: added GeneratorType (one of composite:unitary)
     
     DefsDic = {}
@@ -776,20 +783,33 @@ def textWorkloadDescriptionLine_ToUnitDef( ID, GeneratorType, NTimes, UnitType, 
         OneDef['components'] = DicComponents
     
     #--- arrival time distribution
+#    try:
+#        utilizationFactor=float(configDic['Util'])
+#        try:
+#            currentDistribution = configDic['Distr']
+#        except:
+#            currentDistribution = defaultDistribution 
+#        if utilizationFactor >=0 and utilizationFactor <=1:
+#            # The parameters of the distribution remain 
+#            # undefined for the time being.
+#            OneDef['arrivaltimeinfo'] = (currentDistribution,None)
+#        else:
+#            "Error: Utilization must be between 0 and 1"
+#            raise Exception
+#    except:
     OneDef['arrivaltimeinfo'] = getArrivalTimeDistribution(ArrivalTimeDistr)
     
     #--- Place this definition NTimes
     try:
         NTimes = int(NTimes)
     except:
-        print "Wrong NTimes field", "("+NTimes+")", "...resetting to 1 (default)"
+        print "Wrong NTimes field", "("+NTimes +")", "...resetting to 1 (default)"
         NTimes = 1
         
     OneDef['multiplicity'] = NTimes
     OneDef['id'] = ID
     
     DefsDic[ID] = OneDef
-    
     ##print 'Defined unit with ID', ID
     
     return (iMaxID, DefsDic)
@@ -802,6 +822,7 @@ def readTextWorkloadDescriptionFile( InFileName, \
     print "Identified", InFileName, "as text workload description file"
       
     ListOfDefs = []
+    # Dicotionary with global configuration options
     
     LineNo = 0
     UniqueIDs = {}
@@ -832,6 +853,20 @@ def readTextWorkloadDescriptionFile( InFileName, \
                     except:
                         Version = DefaultVersion
             # _v1.1: file version
+            
+            #--- v1.1_: file version
+            
+            # Configuration line 
+            if (len(line) > 0) and (line[0] == 'c'):
+                continue
+                #Remove 'c' character
+#                line = line[1:]
+#                try:
+#                    getConfigurationLine(configDic, line.split(','))
+#                except:
+#                    print "Erroneous configuration line #", LineNo, "('" + line + "')", "...skipping"
+                    #print '>>>>>>', traceback.print_exc()
+#                continue
                 
             if (len(line) > 0) and (line[0] != '#'): 
                 #--- v1.1_: file version
@@ -865,7 +900,7 @@ def readTextWorkloadDescriptionFile( InFileName, \
                         textWorkloadDescriptionLine_ToUnitDef( ID, GeneratorType, NTimes, UnitType, SiteType, \
                             NTotalJobs, SiteInfo, ArrivalTimeDistr, OtherInfo, \
                             LineNo, iMaxID, UniqueIDs, \
-                            KnownJobNamesList, KnownWorkloadJobNamesList, KnownSiteNamesList )
+                            KnownJobNamesList, KnownWorkloadJobNamesList, KnownSiteNamesList)
                     # _v1.1: composite: added GeneratorType (one of composite:unitary)
                             
                     # if the definition was correct, add the newly created 
@@ -885,6 +920,23 @@ def readTextWorkloadDescriptionFile( InFileName, \
     #--- Return the global list of *correct* definitions
     #print "!!!", ListOfDefs
     return ListOfDefs
+
+def getConfigurationLine(ConfigDic, configs):
+
+    for config in configs:
+        try:
+            key,value = config.strip().split('=')
+        except:
+            raise
+
+        if key in validConfigurationKeys:
+            # if Utilization is given
+            if key == validConfigurationKeys[0]:
+                ConfigDic['fixedUtilization']=True
+            ConfigDic[key] = value
+        else:
+            raise Exception
+         
     
 def readWorkloadDescriptionFile( InFileName, KnownJobNamesList, KnownWorkloadJobNamesList, KnownSiteNamesList ):
     """

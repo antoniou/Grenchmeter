@@ -1,89 +1,102 @@
 import sys
 import os
 import subprocess
-
+import hashlib
 import time
 
 import JsdlParser
 import workerpool
-import SshUtils
 import Timing
 from PersistentStatistics import *
 
 class JobSubmitter(workerpool.Job):
-    def __init__(self,fileName, resourceManager, configurationManager, stats, jobSubmissionTime): # job2Submit of type JsdlParser.Job
+    def __init__(self,fileName, resourceManager, configurationManager, stats, jobSubmissionTime,dedicatedMode): # job2Submit of type JsdlParser.Job
         self.jsdlFile = fileName
         self.profiler = Timing.timeprofile()
         self.resourceManager = resourceManager
         self.configurationManager = configurationManager
         self.stats = stats
         self.jobSubmissionTime = jobSubmissionTime
-
-    def run(self):
-        self.job_removed_from_queue = time.time()
+        self.dedicatedMode = dedicatedMode
+        self.runOnInstance = None
+        self.jobHashValue = None
         
         try:
             self.jobToSubmit = JsdlParser.Job(self.jsdlFile)
         except:
             print "Error while parsing file %s:" % self.jsdlFile, sys.exc_info()[0]
-            
-        #!!!!!!!!!!!!!!!!!!!!!!!!!!
-        # Workaround for race condition of job submission thread and status update thread
-        self.stats.updateStatistics(self.jobToSubmit.applicationName,
-                                    self.jobSubmissionTime,
-                                    None,None,None,None,
-                                    None,None,None,None,
-                                    None,None,None,None, 
-                                    None,None,None)  
-                    
-        # Copy the binary file to the web server directory        
-        source = self.jobToSubmit.executableName
-        if(sys.platform.find("linux")>-1):
-            # For linux distributions
-            dest = self.configurationManager.getHttpServerBase() + "/" + self.jobToSubmit.applicationName 
-            os.system("mkdir " + dest)
-            finalName = source.split('/');
-            exeName = finalName[len(finalName)-1]
-            os.system ("cp %s %s/%s.bin" % (source, dest, exeName))
-        else:
-            #Windows OS        
-            dest = self.configurationManager.getHttpServerBase() + "\\" + self.jobToSubmit.applicationName 
-            os.system("mkdir " + dest)
-            os.system ("copy %s %s" % (source, dest))        
-            
-        # Debug: Added a '.bin' extension so that the files are downloadable from the webserver
-        commandToExecuteTheJob = os.path.basename(self.jobToSubmit.executableName)+".bin"
-        filesToDownload = os.path.basename(self.jobToSubmit.executableName)+".bin"
         
-        numOfFiles = len(self.jobToSubmit.dataStaging)
-        for i in range(0,numOfFiles):
-            ds = self.jobToSubmit.dataStaging[i]
-            if ds.source != '':
-                if(sys.platform.find("linux")>-1):
-                    os.system ("cp %s %s" % (ds.source, dest))
-                else:
-                    os.system ("copy %s %s" % (ds.source, dest))
-                filesToDownload = filesToDownload +  ',' + os.path.basename(ds.source)
+        hashKey = "{0}{1}{2}".format(self.jobToSubmit.executableName,self.jobToSubmit.dataStaging,self.jobToSubmit.arguments)
+        self.jobHashValue = hashlib.sha1(hashKey).hexdigest()
+        
+        
+    def run(self):
+        self.job_removed_from_queue = time.time()
+        
+        #!!!!!!!!!!!!!!!!!!!!!!!!!!
+        # Workaround for race condition of job submission thread and status update thread\
+        if not self.dedicatedMode:
+            self.stats.updateStatistics(self.jobToSubmit.applicationName,
+                                        job_arrival = self.jobSubmissionTime)
+                                      
+        instance = self.getInstanceToExecuteOn()
+        
+        command = self.getCommandToExecute(instance.getID())
+        
+        print "Command: ",command
+        self.executeOnInstance(instance, command)
+                    
+        if not self.dedicatedMode:
+            self.stats.updateStatistics(self.jobToSubmit.applicationName,
+                                    self.jobSubmissionTime,
+                                    self.job_removed_from_queue,
+                                     self.profiler.getValue('resource_selection_algorithm'),
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      None,
+                                      None,
+                                      None,
+                                      None,
+                                      None,
+                                      None,
+                                     instance.getDNSName())
+            
+            
+    def executeOnInstance(self,instance,command):
+        print "{0}: Executing job {1} on instance {2} ({3})".format(time.strftime(" %H:%M:%S"),self.jobToSubmit.applicationName,instance.getID(),instance.getDNSName())
+        executed = instance.execute(command)
+            
+    def getInstanceToExecuteOn(self):
+        self.profiler.mark('resource_selection_algorithm')
+
+        # If an instance is dictated (in dedicated mode)
+        if self.runOnInstance is not None:
+#            (host,instanceId) = (self.runOnInstance.dns_name,self.runOnInstance.id)
+            instance = self.runOnInstance
+        else:
+            instance = self.resourceManager.getNextAvailableInstance()
+#            self.resourceManager.increaseAwaitingJobs(instance.getID())
+            
+        self.profiler.elapsed('resource_selection_algorithm')
+        return instance
+            
+    def getCommandToExecute(self,instanceId):
+        commandToExecuteTheJob = os.path.basename(self.jobToSubmit.executableName)
+        self.buildWebServerDestinationFolder()
+        filesToDownload = self.copyFilesToWebserver()
+        
         for arg in self.jobToSubmit.arguments:
             commandToExecuteTheJob = commandToExecuteTheJob + ' ' + arg
-        
-        #commandToExecuteTheJob = commandToExecuteTheJob + ' 1> ' + self.jobToSubmit.posixConstraints['Output']
-        #commandToExecuteTheJob = commandToExecuteTheJob + ' 2> ' + self.jobToSubmit.posixConstraints['Error']
-        
-        self.profiler.mark('resource_selection_algorithm')
-        
-        #Debug by using local machine, not VM instance
-        (host,instanceId) = self.resourceManager.getNextAvailableInstance()
-#        host = "dutihl"
-        self.profiler.elapsed('resource_selection_algorithm')
-
-#        self.profiler.mark('ssh_overall')
-        self.ssh_session_begin = time.time()
-        
+            
         baseUrl  = self.configurationManager.getHttpServerBaseUrl()
         cmeterDaemonUrl = self.configurationManager.getCmeterDaemonUrl();
         cmeterDaemonPort = self.configurationManager.getEc2BdPort();
-        vmInstanceUser = self.configurationManager.getVmInstanceUser()
         jobUrl = baseUrl + self.jobToSubmit.applicationName
 
         # will create the directory named 'self.jobToSubmit.applicationName'
@@ -92,73 +105,60 @@ class JobSubmitter(workerpool.Job):
         # Command to be executed on the VM instance, to retrieve the appropriate job files and consequently run the job
         commandToExecute = 'python ' + self.jobToSubmit.applicationName +'/ExecuteJob.py -u "'+jobUrl + '" -e "'+ commandToExecuteTheJob + '" -f "'\
                                      + filesToDownload + '" -j "'  + self.jobToSubmit.applicationName + '" -i "' + str(instanceId) \
-                                     + '" -c "' + cmeterDaemonUrl + '" -p "' + cmeterDaemonPort + '"'
+                                     + '" -c "' + cmeterDaemonUrl + '" -p "' + cmeterDaemonPort + '" -h "' + self.jobHashValue + '"'
+        if self.dedicatedMode==True:
+            commandToExecute+=" --dedicated"
         commandToExecute = commandToExecute + '\n'
         
         allCommand = wgetCommand + ';' + commandToExecute
-        print "Command is:", allCommand
         
-        #self.profiler.mark('ssh_begin')
-        self.ssh_open_conn_begin = time.time()
-        print "Connecting to instance...",
+        return allCommand
         
-        sshUtils = SshUtils.SshUtils(host,vmInstanceUser,'',self.configurationManager.getKeyPairFile())
-
-        sshUtils.waitUntilConnected()
-        self.ssh_open_conn_end = time.time()
-        print "DONE"
-        
-        #self.profiler.elapsed('ssh_begin')
-
-        self.ssh_execute_begin = time.time()
-        executed = sshUtils.executeCommand(allCommand)
-        while not executed:
-            sshUtils.disconnect()
-            sshUtils.waitUntilConnected()
-            executed = sshUtils.executeCommand(allCommand)
-        self.ssh_execute_end = time.time()
-        
-#        self.profiler.mark('ssh_end')
+    def buildWebServerDestinationFolder(self):
+        if(sys.platform.find("linux")>-1):
+            self.destinationFolder = self.configurationManager.getHttpServerBase() + "/" + self.jobToSubmit.applicationName 
+            os.system("mkdir " + self.destinationFolder)
+        else:
+            #Windows OS        
+            self.destinationFolder = self.configurationManager.getHttpServerBase() + "\\" + self.jobToSubmit.applicationName 
+            os.system("mkdir " + self.destinationFolder)
     
-        self.ssh_close_conn_begin = time.time()
-        sshUtils.disconnect()
-        self.ssh_close_conn_end = time.time()
-        self.ssh_session_end = time.time()
+    def copyFilesToWebserver(self):
+        source = self.jobToSubmit.executableName
         
-#        self.profiler.elapsed('ssh_end')
-#        self.profiler.elapsed('ssh_overall')
+        # Copy the binary file to the web server directory        
+        if(sys.platform.find("linux")>-1):
+            # For linux distributions
+            finalName = source.split('/');
+            exeName = finalName[len(finalName)-1]
+            os.system ("cp %s %s/%s" % (source, self.destinationFolder, exeName))
+        else:
+            #Windows OS        
+            os.system ("copy %s %s" % (source, self.destinationFolder))
+    
+        filesToDownload = os.path.basename(self.jobToSubmit.executableName)
         
-#        job_name, job_arrival, 
-#                                job_removed_from_queue, 
-#                                resource_scheduling_algorithm_overhead, 
-#                                ssh_session_begin, 
-#                                ssh_open_conn_begin, 
-#                                ssh_open_conn_end,
-#                                ssh_execute_begin,
-#                                ssh_execute_end,
-#                                ssh_close_conn_begin,
-#                                ssh_close_conn_end,
-#                                ssh_session_end,
-#                                job_statistics_received,
-#                                overall_execution_time,
-#                                job_execution_time,
-#                                file_transfer_time,
-#                                execution_machine
-        
-        self.stats.updateStatistics(self.jobToSubmit.applicationName,
-                                    self.jobSubmissionTime,
-                                    self.job_removed_from_queue,
-                                     self.profiler.getValue('resource_selection_algorithm'),
-                                      self.ssh_session_begin,
-                                      self.ssh_open_conn_begin,
-                                      self.ssh_open_conn_end,
-                                      self.ssh_execute_begin,
-                                      self.ssh_execute_end,
-                                      self.ssh_close_conn_begin,
-                                      self.ssh_close_conn_end,
-                                      self.ssh_session_end,
-                                      None,
-                                      None,
-                                      None,
-                                      None,
-                                     host)
+        numOfFiles = len(self.jobToSubmit.dataStaging)
+        for i in range(numOfFiles):
+            ds = self.jobToSubmit.dataStaging[i]
+            if ds.source != '':
+                if(sys.platform.find("linux")>-1):
+                    os.system ("cp %s %s" % (ds.source, self.destinationFolder))
+                else:
+                    os.system ("copy %s %s" % (ds.source, self.destinationFolder))
+                filesToDownload = filesToDownload +  ',' + os.path.basename(ds.source)
+                
+        return filesToDownload
+    
+    def getJobDescription(self):
+        return self.jobToSubmit
+    
+    def getJobName(self):
+        return self.jobToSubmit.applicationName
+    
+    def getJobHashValue(self):
+        return self.jobHashValue
+    
+    def setInstance(self,instance):
+#        print "THIS JOB SUBMITTER will run on instance", instance.id
+        self.runOnInstance=instance

@@ -1,72 +1,4464 @@
 EXEC TIME
-NItems =                      1000.000
-Sum    =                       973.239
-Avg    =                         0.973
-Sum^2  =                    947195.044
-SumSq  =                      7700.137
-N*SumSq=                   7700136.541
-Std-dev =                         2.600
-COV =                         2.671
-Diff   =                   6752941.497
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
 
 
 FILE TRANSFER
-NItems =                      1000.000
-Sum    =                       904.104
-Avg    =                         0.904
-Sum^2  =                    817404.789
-SumSq  =                       910.810
-N*SumSq=                    910809.978
-Std-dev =                         0.306
-COV =                         0.338
-Diff   =                     93405.189
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
 
 
 RESPONSE TIME
-NItems =                      1000.000
-Sum    =                    207399.816
-Avg    =                       207.400
-Sum^2  =               43014683677.915
-SumSq  =                  52596322.457
-N*SumSq=               52596322456.652
-Std-dev =                        97.935
-COV =                         0.472
-Diff   =                9581638778.737
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
 
 
 QWAIT TIME
-NItems =                      1000.000
-Sum    =                    126369.850
-Avg    =                       126.370
-Sum^2  =               15969338990.023
-SumSq  =                  20072304.872
-N*SumSq=               20072304872.169
-Std-dev =                        64.086
-COV =                         0.507
-Diff   =                4102965882.146
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
 
 
 SLOWDOWN
-NItems =                      1000.000
-Sum    =                    184858.012
-Avg    =                       184.858
-Sum^2  =               34172484640.912
-SumSq  =                  44989335.693
-N*SumSq=               44989335693.375
-Std-dev =                       104.056
-COV =                         0.563
-Diff   =               10816851052.463
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
 
 
 SSH
-NItems =                      1000.000
-Sum    =                     87429.324
-Avg    =                        87.429
-Sum^2  =                7643886695.201
-SumSq  =                   8543572.937
-N*SumSq=                8543572937.387
-Std-dev =                        30.010
-COV =                         0.343
-Diff   =                 899686242.186
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                         4.520
+Avg    =                         0.904
+Sum^2  =                        20.435
+SumSq  =                         4.087
+N*SumSq=                        20.435
+Std-dev =                         0.001
+COV =                         0.001
+Diff   =                         0.000
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.055
+Avg    =                         0.011
+Sum^2  =                         0.003
+SumSq  =                         0.001
+N*SumSq=                         0.006
+Std-dev =                         0.012
+COV =                         1.101
+Diff   =                         0.003
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.089
+Avg    =                         1.618
+Sum^2  =                        65.429
+SumSq  =                        13.311
+N*SumSq=                        66.556
+Std-dev =                         0.237
+COV =                         0.147
+Diff   =                         1.127
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                       154.452
+Avg    =                        30.890
+Sum^2  =                     23855.549
+SumSq  =                      5777.885
+N*SumSq=                     28889.427
+Std-dev =                        15.865
+COV =                         0.514
+Diff   =                      5033.877
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.862
+Avg    =                         1.772
+Sum^2  =                        78.535
+SumSq  =                        15.712
+N*SumSq=                        78.560
+Std-dev =                         0.036
+COV =                         0.020
+Diff   =                         0.025
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        11.006
+Avg    =                         2.201
+Sum^2  =                       121.130
+SumSq  =                        24.241
+N*SumSq=                       121.203
+Std-dev =                         0.061
+COV =                         0.028
+Diff   =                         0.074
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.157
+Avg    =                         0.031
+Sum^2  =                         0.025
+SumSq  =                         0.006
+N*SumSq=                         0.031
+Std-dev =                         0.018
+COV =                         0.574
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        20.220
+Avg    =                         4.044
+Sum^2  =                       408.845
+SumSq  =                        81.785
+N*SumSq=                       408.923
+Std-dev =                         0.063
+COV =                         0.015
+Diff   =                         0.078
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.609
+Avg    =                         1.722
+Sum^2  =                        74.112
+SumSq  =                        14.823
+N*SumSq=                        74.115
+Std-dev =                         0.010
+COV =                         0.006
+Diff   =                         0.002
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         9.189
+Avg    =                         1.838
+Sum^2  =                        84.446
+SumSq  =                        16.895
+N*SumSq=                        84.475
+Std-dev =                         0.038
+COV =                         0.021
+Diff   =                         0.029
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.797
+Avg    =                         1.759
+Sum^2  =                        77.386
+SumSq  =                        15.478
+N*SumSq=                        77.389
+Std-dev =                         0.012
+COV =                         0.007
+Diff   =                         0.003
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        11.006
+Avg    =                         2.201
+Sum^2  =                       121.130
+SumSq  =                        24.241
+N*SumSq=                       121.203
+Std-dev =                         0.061
+COV =                         0.028
+Diff   =                         0.074
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.157
+Avg    =                         0.031
+Sum^2  =                         0.025
+SumSq  =                         0.006
+N*SumSq=                         0.031
+Std-dev =                         0.018
+COV =                         0.574
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        20.220
+Avg    =                         4.044
+Sum^2  =                       408.845
+SumSq  =                        81.785
+N*SumSq=                       408.923
+Std-dev =                         0.063
+COV =                         0.015
+Diff   =                         0.078
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.609
+Avg    =                         1.722
+Sum^2  =                        74.112
+SumSq  =                        14.823
+N*SumSq=                        74.115
+Std-dev =                         0.010
+COV =                         0.006
+Diff   =                         0.002
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         9.189
+Avg    =                         1.838
+Sum^2  =                        84.446
+SumSq  =                        16.895
+N*SumSq=                        84.475
+Std-dev =                         0.038
+COV =                         0.021
+Diff   =                         0.029
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.797
+Avg    =                         1.759
+Sum^2  =                        77.386
+SumSq  =                        15.478
+N*SumSq=                        77.389
+Std-dev =                         0.012
+COV =                         0.007
+Diff   =                         0.003
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        11.006
+Avg    =                         2.201
+Sum^2  =                       121.130
+SumSq  =                        24.241
+N*SumSq=                       121.203
+Std-dev =                         0.061
+COV =                         0.028
+Diff   =                         0.074
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.157
+Avg    =                         0.031
+Sum^2  =                         0.025
+SumSq  =                         0.006
+N*SumSq=                         0.031
+Std-dev =                         0.018
+COV =                         0.574
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        20.220
+Avg    =                         4.044
+Sum^2  =                       408.845
+SumSq  =                        81.785
+N*SumSq=                       408.923
+Std-dev =                         0.063
+COV =                         0.015
+Diff   =                         0.078
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.609
+Avg    =                         1.722
+Sum^2  =                        74.112
+SumSq  =                        14.823
+N*SumSq=                        74.115
+Std-dev =                         0.010
+COV =                         0.006
+Diff   =                         0.002
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         9.189
+Avg    =                         1.838
+Sum^2  =                        84.446
+SumSq  =                        16.895
+N*SumSq=                        84.475
+Std-dev =                         0.038
+COV =                         0.021
+Diff   =                         0.029
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.797
+Avg    =                         1.759
+Sum^2  =                        77.386
+SumSq  =                        15.478
+N*SumSq=                        77.389
+Std-dev =                         0.012
+COV =                         0.007
+Diff   =                         0.003
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        11.006
+Avg    =                         2.201
+Sum^2  =                       121.130
+SumSq  =                        24.241
+N*SumSq=                       121.203
+Std-dev =                         0.061
+COV =                         0.028
+Diff   =                         0.074
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.157
+Avg    =                         0.031
+Sum^2  =                         0.025
+SumSq  =                         0.006
+N*SumSq=                         0.031
+Std-dev =                         0.018
+COV =                         0.574
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        20.220
+Avg    =                         4.044
+Sum^2  =                       408.845
+SumSq  =                        81.785
+N*SumSq=                       408.923
+Std-dev =                         0.063
+COV =                         0.015
+Diff   =                         0.078
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.609
+Avg    =                         1.722
+Sum^2  =                        74.112
+SumSq  =                        14.823
+N*SumSq=                        74.115
+Std-dev =                         0.010
+COV =                         0.006
+Diff   =                         0.002
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         9.189
+Avg    =                         1.838
+Sum^2  =                        84.446
+SumSq  =                        16.895
+N*SumSq=                        84.475
+Std-dev =                         0.038
+COV =                         0.021
+Diff   =                         0.029
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.797
+Avg    =                         1.759
+Sum^2  =                        77.386
+SumSq  =                        15.478
+N*SumSq=                        77.389
+Std-dev =                         0.012
+COV =                         0.007
+Diff   =                         0.003
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        11.006
+Avg    =                         2.201
+Sum^2  =                       121.130
+SumSq  =                        24.241
+N*SumSq=                       121.203
+Std-dev =                         0.061
+COV =                         0.028
+Diff   =                         0.074
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.157
+Avg    =                         0.031
+Sum^2  =                         0.025
+SumSq  =                         0.006
+N*SumSq=                         0.031
+Std-dev =                         0.018
+COV =                         0.574
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        20.220
+Avg    =                         4.044
+Sum^2  =                       408.845
+SumSq  =                        81.785
+N*SumSq=                       408.923
+Std-dev =                         0.063
+COV =                         0.015
+Diff   =                         0.078
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         8.609
+Avg    =                         1.722
+Sum^2  =                        74.112
+SumSq  =                        14.823
+N*SumSq=                        74.115
+Std-dev =                         0.010
+COV =                         0.006
+Diff   =                         0.002
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         9.189
+Avg    =                         1.838
+Sum^2  =                        84.446
+SumSq  =                        16.895
+N*SumSq=                        84.475
+Std-dev =                         0.038
+COV =                         0.021
+Diff   =                         0.029
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.797
+Avg    =                         1.759
+Sum^2  =                        77.386
+SumSq  =                        15.478
+N*SumSq=                        77.389
+Std-dev =                         0.012
+COV =                         0.007
+Diff   =                         0.003
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                         5.000
+Sum    =                        16.653
+Avg    =                         3.331
+Sum^2  =                       277.311
+SumSq  =                        59.043
+N*SumSq=                       295.214
+Std-dev =                         0.946
+COV =                         0.284
+Diff   =                        17.903
+
+
+FILE TRANSFER
+NItems =                         5.000
+Sum    =                         0.136
+Avg    =                         0.027
+Sum^2  =                         0.018
+SumSq  =                         0.005
+N*SumSq=                         0.025
+Std-dev =                         0.019
+COV =                         0.682
+Diff   =                         0.007
+
+
+RESPONSE TIME
+NItems =                         5.000
+Sum    =                        25.151
+Avg    =                         5.030
+Sum^2  =                       632.554
+SumSq  =                       133.744
+N*SumSq=                       668.722
+Std-dev =                         1.345
+COV =                         0.267
+Diff   =                        36.168
+
+
+QWAIT TIME
+NItems =                         5.000
+Sum    =                         6.825
+Avg    =                         1.365
+Sum^2  =                        46.585
+SumSq  =                        10.294
+N*SumSq=                        51.469
+Std-dev =                         0.494
+COV =                         0.362
+Diff   =                         4.884
+
+
+SLOWDOWN
+NItems =                         5.000
+Sum    =                         7.603
+Avg    =                         1.521
+Sum^2  =                        57.812
+SumSq  =                        11.571
+N*SumSq=                        57.855
+Std-dev =                         0.046
+COV =                         0.030
+Diff   =                         0.043
+
+
+SSH
+NItems =                         5.000
+Sum    =                         8.769
+Avg    =                         1.754
+Sum^2  =                        76.904
+SumSq  =                        15.386
+N*SumSq=                        76.931
+Std-dev =                         0.037
+COV =                         0.021
+Diff   =                         0.027
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
+
+
+EXEC TIME
+NItems =                        10.000
+Sum    =                        12.916
+Avg    =                         1.292
+Sum^2  =                       166.831
+SumSq  =                        68.448
+N*SumSq=                       684.480
+Std-dev =                         2.398
+COV =                         1.857
+Diff   =                       517.649
+
+
+FILE TRANSFER
+NItems =                        10.000
+Sum    =                         0.360
+Avg    =                         0.036
+Sum^2  =                         0.129
+SumSq  =                         0.017
+N*SumSq=                         0.174
+Std-dev =                         0.022
+COV =                         0.619
+Diff   =                         0.045
+
+
+RESPONSE TIME
+NItems =                        10.000
+Sum    =                        43.174
+Avg    =                         4.317
+Sum^2  =                      1864.028
+SumSq  =                       213.938
+N*SumSq=                      2139.382
+Std-dev =                         1.749
+COV =                         0.405
+Diff   =                       275.354
+
+
+QWAIT TIME
+NItems =                        10.000
+Sum    =                        22.754
+Avg    =                         2.275
+Sum^2  =                       517.759
+SumSq  =                        59.940
+N*SumSq=                       599.402
+Std-dev =                         0.952
+COV =                         0.419
+Diff   =                        81.644
+
+
+SLOWDOWN
+NItems =                        10.000
+Sum    =                        30.959
+Avg    =                         3.096
+Sum^2  =                       958.468
+SumSq  =                       103.703
+N*SumSq=                      1037.034
+Std-dev =                         0.934
+COV =                         0.302
+Diff   =                        78.566
+
+
+SSH
+NItems =                        10.000
+Sum    =                        29.602
+Avg    =                         2.960
+Sum^2  =                       876.258
+SumSq  =                        91.969
+N*SumSq=                       919.687
+Std-dev =                         0.695
+COV =                         0.235
+Diff   =                        43.429
 
 

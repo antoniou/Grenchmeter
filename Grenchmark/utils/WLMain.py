@@ -33,7 +33,8 @@ __license__ = "Python"
 import sys
 import traceback
 import os.path
-from time import time, gmtime, strftime 
+from time import time, gmtime, strftime
+import hashlib 
 
 if "utils" not in sys.path:
     sys.path.append("utils")
@@ -57,7 +58,7 @@ def getWLUnitJDFFileName( WLUnitDir, WLUnitID ):
     
 def generateWorkload( OutDir, FullWLFileName, ListOfDefs, SubmitDurationMS,
                       AUnitGensLoader, AWLGensLoader, AJDFGeneratorsLoader, JDFGeneratorNames, 
-                      DictionaryOfSites ):
+                      DictionaryOfSites ,arrivalDistribution = None):
     print "STATUS! Starting workload generation!"
     
     # the number of workflow engines for which we generate output files
@@ -85,7 +86,11 @@ def generateWorkload( OutDir, FullWLFileName, ListOfDefs, SubmitDurationMS,
     #--- Generate all units
     for WLUnit in ListOfDefs:
         
+        if arrivalDistribution!=None:
+            WLUnit["arrivaltimeinfo"]=arrivalDistribution
+            
         WLUnitID = WLUnit['id']
+        
         WLOutDir = getWLUnitDir( OutDir, WLUnitID )
         
         #--- Create output directory, if it does not exist
@@ -216,6 +221,7 @@ def generateWorkload( OutDir, FullWLFileName, ListOfDefs, SubmitDurationMS,
                     #SubUnit['arrivaltimeinfo'] = ('Zero', []) # all jobs in the same composite application arrive at the same time, 0
                     SubUnit['arrivaltimeinfo'] = WLUnit['arrivaltimeinfo'] 
                     SubUnit['arrivaltimefunc'] = WLUnit['arrivaltimefunc']
+
                     
                     SubUnit['otherinfo'] = {}
                     for item in WLUnit['otherinfo']:
@@ -456,7 +462,26 @@ def generateWorkload( OutDir, FullWLFileName, ListOfDefs, SubmitDurationMS,
                 WLUnit['unit'] = CurrentGeneratorFunc( WLOutDir, WLUnitID, WLUnit, SubmitDurationMS, bGenerateRandom )
                 
                 
-            # _v1.1: composite
+            # Write arrivalTimes in a file, so that they will be accessible by the main Grenchmeter script
+            arrivalTimesFileName = "../arrivalTimes.dat"
+            arrivalTimesFile  = open(arrivalTimesFileName,'w')
+            for unit in WLUnit['unit']['info']:
+                execName = WLUnit['unit']['jobs'][unit][0]['executable']
+                arguments = WLUnit['unit']['jobs'][unit][0]['arguments']
+                uni_args = []
+                for arg in arguments:
+                    uni_args.append(unicode(arg))
+                arguments = uni_args
+                dataStaging = WLUnit['unit']['jobs'][unit][0]['stagein'] + WLUnit['unit']['jobs'][unit][0]['stageout']
+                if dataStaging[0] =='':
+                    dataStaging = []
+                hashKey = "{0}{1}{2}".format(execName,dataStaging,arguments)
+                print "WL-MAIN: HASH KEY IS: ",hashKey
+                jobHashValue = hashlib.sha1(hashKey).hexdigest()
+                print "ExeName = {0}, arguments = {1} {2}".format(execName,arguments,jobHashValue)
+                arrivalTimesFile.write("{0}\t{1}\n".format(jobHashValue,WLUnit['unit']['info'][unit]['runTime']))
+            arrivalTimesFile.close()
+                
             WLUnit['status'] = 1 # define a status field
             print "STATUS! ...done generating unit", WLUnitID, "(type=", WLUnit['apptype'], ")"
         except Exception, e:

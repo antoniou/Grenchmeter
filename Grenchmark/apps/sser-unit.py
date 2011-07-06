@@ -86,6 +86,7 @@ class SSERComponent:
                 ArgsList.append(str(O3))
         else:    
             ArgsList.append("--nooutput")
+            
         ArgsList.append("--nosummary")
         ArgsList.append("--verbose")
         return ArgsList
@@ -172,6 +173,12 @@ class SSERComponent:
             M = AIRandomUtils.getRandomListElement( SSERComponent.SSER_ParMemoryKItems )
             S = AIRandomUtils.getRandomListElement( SSERComponent.SSER_ParMemoryElementsPerItem )
             C = AIRandomUtils.getRandomListElement( SSERComponent.SSER_ParComputationPerMemoryItem )
+
+#            N = SSERComponent.SSER_ParSupersteps[2]
+#            M = AIRandomUtils.getRandomListElement( SSERComponent.SSER_ParMemoryKItems )
+#            S = AIRandomUtils.getRandomListElement( SSERComponent.SSER_ParMemoryElementsPerItem )
+#            C = SSERComponent.SSER_ParComputationPerMemoryItem[3]
+
             MaxWallTime = AIRandomUtils.getRandomListElement( SSERComponent.SSER_RunTimeInMinutes )
         
         if self.UnitDir[0] != '/':
@@ -235,7 +242,7 @@ class SSERComponent:
         
         return 0
         
-def generateJobInfo( UnitDir, UnitID, JobIndex, WLUnit, SubmitDurationMS ):
+def generateJobInfo( UnitDir, UnitID, JobIndex, WLUnit, SubmitDurationMS):
     """ 
     Out:
         A dictionary having at least the keys:
@@ -257,14 +264,18 @@ def generateJobInfo( UnitDir, UnitID, JobIndex, WLUnit, SubmitDurationMS ):
     #InfoDic['submitCommand'] = 'wrapper_scripts/condor_submit_wrapper.sh %s' % InfoDic['jdf']
     absPath = os.path.abspath(InfoDic['jdf'])
     InfoDic['jdf'] = absPath
+    
     InfoDic['submitCommand'] = 'python ../Cmeter/ec2br/ec2br.py -p 3000 -u localhost -j %s' % absPath
     
     try:
         Name = WLUnit['arrivaltimeinfo'][0]
+        print "In sser-unit: Distribution NAME IS ",Name
+        print "In sser-unit: Distribution PARAMS ARE ",WLUnit['arrivaltimeinfo'][1]
         ParamsList = WLUnit['arrivaltimeinfo'][1]
         RunTime = SSER_LastRunTime + WLUnit['arrivaltimefunc']( Name, ParamsList )
         SSER_LastRunTime = RunTime
         InfoDic['runTime'] = "%.3f" % RunTime
+        print "In sser-unit: RUNTIME IS ",InfoDic['runTime']
     except AIRandomUtils.AIRandomError, e:
         print "AIRandomUtils.AIRandomError", e
         InfoDic['runTime'] = None

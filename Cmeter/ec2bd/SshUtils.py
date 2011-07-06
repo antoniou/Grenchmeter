@@ -23,18 +23,30 @@ class SshUtils:
         except:
             #print sys.exc_info()
             return False
-    
-    def waitUntilConnected(self):
+
+    def reset(self):
+        self.disconnect()
         connected = self.doConnect()
-        
         while not connected:
             time.sleep(0.2)
-            print "FAILED. Retrying..."
+            print "Connection failed. Retrying..."
             connected = self.doConnect()
+        
+    def executeCommand(self,cmd):
+        MAX_RETRIES = 100
+        executed = False
+        attempt = 0
+        
+#        while not executed and attempt < MAX_RETRIES:
+        while not executed:
+            executed = self.__execute(cmd)
+            if not executed:
+                time.sleep(0.1)
+            attempt += 1
             
-            
-          
-    def executeCommand(self, cmd):
+        return executed 
+              
+    def __execute(self, cmd):
         try:
             stdin, stdout, stderr = self.client.exec_command(cmd)
             return True

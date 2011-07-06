@@ -1,7 +1,9 @@
 from numpy import *
 import sys
 import os
-import Gnuplot, Gnuplot.funcutils
+import Gnuplot
+import Gnuplot.funcutils
+
 from datetime import datetime
 
 def plotResponseTimes(result_set, response):
@@ -26,8 +28,19 @@ def plotQueueWaitTime(result_set, qwait):
         plotData.append(data)
     plotJobExecTimes(plotData, 'Arrival Time' , 'Wait Time (s)' , 'Queue Wait Time'  , 'qwait.eps', "25", "20", False, 'lines lw 1 lc  rgb \"black\"')   
     
+
+def plotSlowdowns(result_set, slowdownOne,slowdownInf):
+    plotData=[]
+    for i in range(len(result_set)):
+        row = result_set[i]
+        data=[]
+        data.append(row[1]) # submission time
+        data.append(slowdownOne[i])
+        data.append(slowdownInf[i])  
+        plotData.append(data)
+    plotJobExecTimes(plotData, 'Arrival Time' , 'Slowdown' , 'Slowdown'  , 'slowdown.eps', "25", "5", True, 'lc rgb \"black\" lines lw 1 ')
     
-def plotSlowdowns(result_set, slowdown):
+def plotSlowdown(result_set, slowdown):
     plotData=[]
     for i in range(len(result_set)):
         row = result_set[i]
@@ -35,7 +48,8 @@ def plotSlowdowns(result_set, slowdown):
         data.append(row[1]) # submission time
         data.append(slowdown[i]) 
         plotData.append(data)
-    plotJobExecTimes(plotData, 'Arrival Time' , 'Slowdown' , 'Bounded Slowdown'  , 'slowdown.eps', "25", "5", True, 'lines lw 1 lc  rgb \"black\"')    
+#    plotJobExecTimes(plotData, 'Arrival Time' , 'Slowdown' , 'Bounded Slowdown'  , 'slowdown.eps', "25", "5", True, 'lines lw 1 lc  rgb \"black\"')
+    plotJobExecTimes(plotData, 'Arrival Time' , 'Slowdown' , 'Bounded Slowdown'  , 'slowdown.eps', "25", "1", False, 'lines lw 1 lc  rgb \"black\"')            
     
 def plotJobStats(result_set):
     plotData=[]
@@ -44,7 +58,7 @@ def plotJobStats(result_set):
         data.append(row[1]) # submission time
         data.append(row[13]) # overall exec time
         plotData.append(data)
-    plotJobExecTimes(plotData, 'Arrival Time' , 'Execution Time (s)' , 'Execution Time'  , 'exec_time.eps', "50", "25", False, "lines lw 1 lc  rgb \"black\"")
+    plotJobExecTimes(plotData, 'Arrival Time' , 'Execution Time (s)' , 'Execution Time'  , 'exec_time.eps', "50", "25", False, "lines lw 1 lc rgb \"black\"")
 
 def plotFileTransferTimes(result_set):
     plotData=[]
@@ -108,7 +122,7 @@ def plotCumul(dataList,wsList):
     
 def plotJobExecTimes(data, xlabel, ylabel, title, fileName, xtics, ytics, isLogScale, typeOfPlot):
     g = Gnuplot.Gnuplot(debug=1)
-    g("set ytics " + ytics + " font \"Arial,20\"")
+#    g("set ytics " + ytics + " font \"Arial,20\"")
     g("set grid")
     xlabel = "\""+xlabel+ "\"" + " font \"Arial,20\""
     g("set xlabel " + xlabel)
@@ -116,12 +130,14 @@ def plotJobExecTimes(data, xlabel, ylabel, title, fileName, xtics, ytics, isLogS
     g("set ylabel " + ylabel)
     if isLogScale:
         g("set logscale y")
-    g("set xtics 20 border in scale 3,2.5 nomirror out rotate by 90  offset character 0, 0, 0 font \"Arial,20\"")
+        
+#    g("set xtics "+xtics+" border in scale 3,2.5 nomirror out rotate by 90  offset character 0, 0, 0 font \"Arial,20\"")
+#    g("set xtics "+xtics+"  font \"Arial,20\"")
     g("set title " + "\"" + title + "\"" + " font \"Arial,20\"")
-    plot2 = Gnuplot.PlotItems.Data(data,using="1:2", with_=typeOfPlot)  # 
-    g.plot(plot2)
-    g.hardcopy(fileName, enhanced=1, color=0)
-    #g.hardcopy(fileName, terminal='jpg')
+    plot2 = Gnuplot.PlotItems.Data(data,using="1:2",title="Slowdown1",with_="lines lw 1 lt 1")
+    plot3 = Gnuplot.PlotItems.Data(data,using="1:3",title="SlowdownInf",with_="lines lw 1 lt 2")
+    g.plot(plot3,plot2)
+    g.hardcopy(fileName, enhanced=1, color=1)
     raw_input('Please press return to continue...\n')
     
 

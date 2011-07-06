@@ -39,6 +39,11 @@ OPTIONS:
     
     --version
       Display wl-gen-simple version and copyright.
+      
+    --dedicated
+      Run jobs in workload serially, so that each job
+      has complete control of the resources. Used for 
+      calculating slowdown suffered when run in a workload  
     
 
 SAMPLE RUN:
@@ -233,14 +238,16 @@ def runWL( OutputDir, XMLhandler, NPoolThreads, NoSubmit=0, NoBackground=0, OneF
     
     DictionaryOfApps = XMLhandler.getDictionaryOfApplications()
     
-    ##    ListOfApps = AIStorageUtils.dict_sortbykey( DictionaryOfApps, AIStorageUtils.SORT_DESCENDING )
-    ##    for (id, App) in ListOfApps: 
-    ##        print "Found ", App['id'], "due to start at", App['runTime']
-    ##        
+            
         
     ListOfApps = AIStorageUtils.dict_sortbyvalue_dict( DictionaryOfApps, 'runTime', 
                                                        AIStorageUtils.SORT_TYPE_FLOAT, 
                                                        AIStorageUtils.SORT_ASCENDING )
+
+    #    ListOfApps = AIStorageUtils.dict_sortbykey( DictionaryOfApps, AIStorageUtils.SORT_DESCENDING )
+    for (id, App) in ListOfApps: 
+        print "Found ", App['id'], "due to start at", App['runTime']
+        
     NTotalJobs = len( ListOfApps )
     #print "### Found", NTotalJobs, "apps. Sorting...done."
                                                     
@@ -397,7 +404,7 @@ def main(argv):
     global NRandomTests
            
     try:                                
-        opts, args = getopt.getopt(argv[1:], "ht:", ["help", "threads=", "version", "nosubmit", "nobackground", "onefile", "testid=", "projectid=", "testerid=", "starttime="])
+        opts, args = getopt.getopt(argv[1:], "ht:d", ["help", "threads=", "version", "nosubmit", "nobackground", "onefile", "testid=", "projectid=", "testerid=", "starttime=","dedicated"])
     except getopt.GetoptError:
         print "Error while converting options: unknown option(s) encountered.\n\n"
         usage(os.path.basename(sys.argv[0]))
@@ -411,6 +418,7 @@ def main(argv):
     testerid = 0
     starttime = time.time()
     projectid = "default"
+    dedicatedMode=False
 
     #print opts
     #print args    
@@ -447,6 +455,8 @@ def main(argv):
             #print starttime
         elif opt in ["--projectid"]:
             projectid = str(arg.strip())
+        elif opt in ["-d","--dedicated"]:
+            dedicatedMode = True
         else:
             print "Unknown parameter", opt
 
@@ -465,7 +475,7 @@ def main(argv):
         
     print "%s Parsing workload file %s" % \
           ( time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(time.time())), WorkloadFileName )
-    handlerXML = WLDocHandlers.readWorkloadSubmitFile( WorkloadFileName )
+    handlerXML = WLDocHandlers.readWorkloadSubmitFile( WorkloadFileName, dedicatedMode )
     print "%s Workload file processed, proceeding to submission"  % \
           ( time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(time.time())) ) 
         

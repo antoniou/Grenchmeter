@@ -68,53 +68,5 @@ class Resource:
     def __str__(self):
         string = 'instanceid  = ' + str(self.instance.id) + ' lastPredictedResponseTime = ' + str(self.lastPredictedResponseTime)  
         
-        
-#from boto.ec2.instance import *
-#i1 = Instance()
-#i1.id = 'i1'
-#i2 = Instance()
-#i2.id = 'i2'
-#i3 = Instance()
-#i3.id = 'i3'
-#i4 = Instance()
-#i4.id = 'i4'
-#i5 = Instance()
-#i5.id = 'i5'
-#instances = []
-#instances.append(i1)
-#instances.append(i2)
-#instances.append(i3)
-#instances.append(i4)
-#instances.append(i5)
-#policy = PredictiveResourceSelectionPolicy(instances)
-#print policy.getNextResource()
-#print policy.getNextResource()
-#print policy.getNextResource()
-#print policy.getNextResource()
-#print policy.getNextResource()
-#print policy.getNextResource()
-#print policy.getNextResource()
-#print policy.getNextResource()
-#policy.updateResourceState('i2', '22')
-#print policy.getNextResource()
-#policy.updateResourceState('i2', '10')
-#print policy.getNextResource()
-#policy.updateResourceState('i1', '2')
-#policy.updateResourceState('i1', '1')
-#print policy.getNextResource()
-#policy.updateResourceState('i3', '1')
-#print policy.getNextResource() 
-#policy.updateResourceState('i3', '1')
-#print policy.getNextResource()
-#
-#policy.updateResourceState('i4', '1')
-#print policy.getNextResource() 
-#policy.updateResourceState('i4', '31')
-#print policy.getNextResource()   
-#
-#policy.updateResourceState('i5', '31')
-#print policy.getNextResource() 
-#policy.updateResourceState('i5', '1')
-#print policy.getNextResource()        
     
     
