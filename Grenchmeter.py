@@ -160,10 +160,9 @@ def main(argv):
     workloadOutDir   = WORKLOAD_OUTDIR
     Grenchmark, cMeter, workloadConfig = initServices(argv, workloadOutDir)
     
-    # Generate workload using workloadFile
     Grenchmark.generateWorkload({"--outdir":workloadOutDir}, useArrivalDistribution = False)
     
-#    submitWorkloadDedicated(Grenchmark, cMeter)
+    submitWorkloadDedicated(Grenchmark, cMeter)
     
     if workloadConfig.systemUtilizationMode():
         generateFixedUtilizationWorkload(Grenchmark, workloadOutDir)

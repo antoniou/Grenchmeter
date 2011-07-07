@@ -4,20 +4,21 @@ import xml.sax.handler
 import os
 
 class OneInfoParser:
-	def __init__(self,OneConnection, credentials):
-		self.oneConnection = OneConnection
-		self.handler = OneInfoHandler.OneInfoHandler()
+	def __init__(self, oneConnection, credentials):
+		self.oneConnection = oneConnection
+		self.handler = OneInfoHandler()
+		self.credentials = credentials
 		 
-	def getOneInfo(self):
-		self.__parseVMInfo()
+	def getOneInfo(self,imageID):
+		self.__parseVMInfo(imageID)
 		state = self.__getState() 
 		IP = self.__getIP()
 		ID = self.__getID()
 		
 		return (state,IP,ID)
 		
-	def __parseVMInfo(self):
-		vminfo=oneConnection.one.vm.info(credentials,vm[1])
+	def __parseVMInfo(self,imageID):
+		vminfo = self.oneConnection.one.vm.info(self.credentials,imageID)
 		print  vminfo[1]
 		xml.sax.parseString(vminfo[1],self.handler)
 		
@@ -27,6 +28,9 @@ class OneInfoParser:
 	
 	def __getIP(self):
 		return self.handler.IP
+	
+	def __getID(self):
+		return self.handler.ID
 		
 class OneInfoHandler(xml.sax.handler.ContentHandler):
 	def __init__(self):

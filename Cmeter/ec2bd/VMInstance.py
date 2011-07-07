@@ -7,7 +7,7 @@ import OneInfo
 
 instanceComputingUnitsDic = { 'm1.small':1, 'c1.medium':2,'m1.large':2,'m1.xlarge':4,'c1.xlarge':2 }
 class VMInstance:
-    def __init__(self):
+    def __init__(self, configurationManager):
         self.instanceUser = configurationManager.getVmInstanceUser()
         self.keypairFile = configurationManager.getKeyPairFile()
         self.sshUtils = None 
@@ -78,11 +78,9 @@ class VMInstance:
     def disconnect(self):
         self.sshUtils.disconnect()
         
-    
-    
-class EC2VMInstance(VMInstance):
+class EC2Instance(VMInstance):
     def __init__(self,EC2Instance, configurationManager, id = None,imageID = None ,ipAddress = None,dnsName = None,type = "m1.small"):
-        VMInstance.__init__(self)
+        VMInstance.__init__(self, configurationManager)
         if EC2Instance is None:
             self.ec2Instance = boto.ec2.instance.Instance()
             self.ec2Instance.id = id
@@ -96,8 +94,6 @@ class EC2VMInstance(VMInstance):
         
         self.numberOfComputingUnits = instanceComputingUnitsDic[self.ec2Instance.instance_type]
 
-    def getNumberOfComputingUnits(self):
-        return self.numberOfComputingUnits
             
     def getState(self):
         return self.ec2Instance.state
@@ -141,30 +137,40 @@ class EC2VMInstance(VMInstance):
                 
         return False
     
+    def getNumberOfComputingUnits(self):
+        return self.numberOfComputingUnits
+    
 class OneInstance(VMInstance):
-    def __init__(self, configurationManager, OneConnection, credentials,type = "m1.small"):
-        VMInstance.__init__(self)
-        self.oneParser = OneInfo.OneInfoParser(OneConnection,credentials)
-        self.imageID = imageID
-        self.type = type
-        #TODO state 3---> "running"
+    def __init__(self, configurationManager, oneConnection,type= "m1.small"):
+        VMInstance.__init__(self, configurationManager)
+        self.oneConnection = oneConnection
+        self.credentials="antoniou:43115424d464f14c6c68b79074531f71d51bdf9c"
+        self.oneParser = OneInfo.OneInfoParser(self.oneConnection,self.credentials)
+        #TODO state 3---> "running"?
         self.state = None
         self.ipAddress = None
         self.dnsName = None
-        
+        self.imageID = None
+        self.type = type
+        self.numberOfComputingUnits = instanceComputingUnitsDic[self.type]
     def update(self):
-        self.state, self.ipAddress, self.id = self.oneParser.getOneInfo() 
+        self.state, self.ipAddress, self.id = self.oneParser.getOneInfo(self.imageID) 
         # TODO : dns name?
         self.dnsName = self.ipAddress
         
+    def run(self, imageTemplate):
+        s=open(imageTemplate,'r').read()
+        print s
+        vm=self.oneConnection.one.vm.allocate(self.credentials,s)
+        self.imageID = vm[1]
         
     def connect(self):
-        if self.state != 'running':
+        if self.state != 3:
             self.update()
             time.sleep(0.2)
         else:
-            print "\t\tConnecting to instance {0}...".format(self.dns_name),
-            self.sshUtils = SshUtils.SshUtils(self.dns_name, self.instanceUser,'amazon',self.keypairFile) 
+            print "\t\tConnecting to instance {0}...".format(self.dnsName),
+            self.sshUtils = SshUtils.SshUtils(self.dnsName, self.instanceUser,'amazon',self.keypairFile) 
             connected = self.sshUtils.doConnect()
             if connected:
                 print "Done"
@@ -174,10 +180,6 @@ class OneInstance(VMInstance):
                 print "Unsuccessful"
                 
         return False
-    
-    def getNumberOfComputingUnits(self):
-        #TODO
-        pass
     
     def getState(self):
         self.update()
@@ -192,9 +194,12 @@ class OneInstance(VMInstance):
     def getDNSName(self):
         return self.dnsName
     
-    def getType(self):
-        return self.type
-
     def getImageID(self):
-        return self.imageID        
+        return self.imageID
+       
+    def getType(self):
+        return self.type   
+    
+    def getNumberOfComputingUnits(self):
+        return self.numberOfComputingUnits     
         

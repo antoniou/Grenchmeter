@@ -34,16 +34,15 @@ class ResourceManager:
     INSTANCE_FILE_NAME = './instances.in' 
     def __init__(self, resourceSpec, configurationManager, stats):
         
-        self.initialization()     
+        self.initialization(resourceSpec,configurationManager)     
         self.connectToCloud()
         if self.instancesFileExists():
             self.loadInstancesFromFile(self.runningInstancesFile)
                 
-        image = self.buildAmiList()
         self.profiler.mark("wait_for_all_instances_to_get_running")
 
         # Run this specific image
-        self.runInstances(image, configurationManager.getKeyPairFile())
+        self.runInstances(configurationManager.getKeyPairFile())
         self.profiler.elapsed("wait_for_all_instances_to_get_running")
         
         self.calcNumOfComputingUnits()
@@ -55,10 +54,10 @@ class ResourceManager:
         print "Using policy " + self.resourceSelectionPolicy.getName()
         self.stats = stats
         
-    def initialization(self):
+    def initialization(self,resourceSpec,configurationManager):
         self.profiler = Timing.timeprofile()
         self.profiler.mark("resource_mng_connect")
-        self.configurationManager =configurationManager
+        self.configurationManager = configurationManager
         
         self.keyPairFile = configurationManager.getKeyPairFile()
         self.VmInstanceUser = configurationManager.getVmInstanceUser()
@@ -98,11 +97,11 @@ class ResourceManager:
     def connectToCloud(self):
         cloudName = self.configurationManager.getCloudName()
         if cloudName == 'Amazon':
-            connectToAmazonEC2()
+            self.connectToAmazonEC2()
         elif cloudName == "Eucalyptus":
-            connectToEucalyptus()
+            self.connectToEucalyptus()
         elif cloudName == "OpenNebula":
-            connectToOpenNebula()
+            self.connectToOpenNebula()
         else:
             print "ERROR: Wrong Cloud name: {0}".format(cloudName)
             
@@ -143,7 +142,7 @@ class ResourceManager:
     # Build a DICTIONARY (not a list) of all the
     # available images on Amazon EC2
     ###########################################
-    def buildAmiList(self):
+    def buildAmiDict(self):
         """ Build a dictionary of all the available images on EC2 """
         print "\tRetrieving all available images..."
         images = self.EC2Connection.get_all_images()
@@ -159,35 +158,59 @@ class ResourceManager:
     # Run "image" on all the resources  that 
     # are described in the resource list        
     ###########################################     
-    def runInstances(self, image,keypair):
-        self.reservations = []
+    def runInstances(self, keypair):
+        cloudName = self.configurationManager.getCloudName()
+        keypairBase = self.getKeypairBasename(keypair)
+               
+        if cloudName == 'Amazon' or cloudName == "Eucalyptus":
+            self.runEC2Instances(keypairBase)
+        elif cloudName == "OpenNebula":
+            self.runOneInstances()
         
+        self.waitUntilAllInstancesAreRunning()
+        
+        self.constructInstancesByDNSNameDict()
+            
+    def constructInstancesByDNSNameDict(self):
+        for instance in self.vmInstancesList:
+            print "Adding INSTANCE:",instance.getDNSName()
+            self.vmInstances[instance.getDNSName()] = instance
+            
+    def getKeypairBasename(self,keypair):
         # keep only the basename, remove absolute path
-        keypair_basename=os.path.basename(keypair)
-        
-        # The keypair name without the ".private" extension 
-        if '.priv' in keypair_basename or '.pem' in keypair_basename:
-            keypair_basename=keypair_basename.split('.')[0]
-        
+        keypairBasename=os.path.basename(keypair)
+        if '.priv' in keypairBasename or '.pem' in keypairBasename:
+            keypairBasename=keypairBasename.split('.')[0]
+        return keypairBasename
+            
+    def runEC2Instances(self,  keypair_base):
+        image = self.buildAmiDict()
+        self.reservations = []
         for instanceType,instanceCount in self.resourceList:
             if instanceCount > self.runningInstancesDic[instanceType]:
                 instanceCount -= self.runningInstancesDic[instanceType]
                 if instanceCount > 0:
                     print "\tRunning image ",image," on ", instanceCount," instances of type ",instanceType
-                    instancesReserved = image.run(instanceCount, instanceCount, key_name = keypair_basename, instance_type=instanceType)
+                    instancesReserved = image.run(instanceCount, instanceCount, key_name = keypair_base, instance_type=instanceType)
                     self.instances += instancesReserved.instances # merge all instances into self.instances
                     self.reservations.append(instancesReserved)
-
+        
         for instance in self.instances:
             vmInstance = VMInstance.VMInstance(instance, self.configurationManager)
             self.vmInstancesList.append(vmInstance)
-           
-        self.waitUntilAllInstancesAreRunning()
         
-        for instance in self.vmInstancesList:
-            print "Adding INSTANCE:",instance.getDNSName()
-            self.vmInstances[instance.getDNSName()] = instance
-        
+            
+    def runOneInstances(self):
+        image = self.configurationManager.getVMImage()
+        for instanceType,instanceCount in self.resourceList:
+            if instanceCount > self.runningInstancesDic[instanceType]:
+                instanceCount -= self.runningInstancesDic[instanceType]
+                if instanceCount > 0:
+                    print "\tRunning image ",image," on ", instanceCount," instances of type ",instanceType
+                    for i in range(instanceCount):
+                        vmInstance = VMInstance.OneInstance(self.configurationManager,self.EC2Connection)
+                        vmInstance.run(image)
+                        self.vmInstancesList.append(vmInstance)
         
     def waitUntilAllInstancesAreRunning(self):
         print "\tWaiting for instances to boot:"

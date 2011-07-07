@@ -1,13 +1,13 @@
 # File-type: text/wl-spec
 # File-version: 1.2
 
-c Util=0.7, Distr=Poisson, ErrorMargin=0.01
+#c Util=0.7, Distr=Poisson, ErrorMargin=0.01
 
 # Maximum experiment duration is 10 minutes
 # c MaxDuration=600000   
 
 # WL Unit ID<tab>Composite type<tab>Times this unit<tab>Job Type<Tab>Site structure type<Tab>Total # of jobs per unit<tab>Detailed Site structure<Tab>Arrival time distribution<Tab>Other info
 #ID	GeneratorType	Times	UnitType	SiteType	Total	SiteInfo	ArrivalTimeDistr	OtherInfo
-0	unitary	48000	sser	single	1	*:?	Poisson(1000)	StartAt=0
+0	unitary	10	sser	single	1	*:?	Poisson(1000)	StartAt=0
 #1	unitary	4	sser	single	1	*:?	Poisson(10)	-
 #1	unitary	1	exe	single	1	*:?	Poisson(1000)	Exe=/bin/mkdir,args=Nassos
