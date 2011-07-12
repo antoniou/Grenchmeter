@@ -14,7 +14,8 @@ import subprocess
 import socket
 import math
 
-ITERATIONS = 50 # Number of iterations for dedicated mode
+ # Number of iterations for dedicated mode
+ITERATIONS = 50
 
 class ElapsedTimes(list):
     

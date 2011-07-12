@@ -1,0 +1,8 @@
+Requirements: PYTHON version >= 2.6
+			  pysqlite2
+			  numpy
+			  paramiko >=1.7.4
+			  boto 	   >=1.9
+			  pysqlite >=2.6.3
+			  pycrypto >=2.3
+			  

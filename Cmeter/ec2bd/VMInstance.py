@@ -162,7 +162,7 @@ class OneInstance(VMInstance):
         s=open(imageTemplate,'r').read()
         print s
         vm=self.oneConnection.one.vm.allocate(self.credentials,s)
-        self.imageID = vm[1]
+        self.imageID = int(vm[1])
         
     def connect(self):
         if self.state != 3:
@@ -170,7 +170,7 @@ class OneInstance(VMInstance):
             time.sleep(0.2)
         else:
             print "\t\tConnecting to instance {0}...".format(self.dnsName),
-            self.sshUtils = SshUtils.SshUtils(self.dnsName, self.instanceUser,'amazon',self.keypairFile) 
+            self.sshUtils = SshUtils.SshUtils(self.dnsName, self.instanceUser,'xvmPwd,0',None) 
             connected = self.sshUtils.doConnect()
             if connected:
                 print "Done"
@@ -178,7 +178,6 @@ class OneInstance(VMInstance):
                 return executed
             else:
                 print "Unsuccessful"
-                
         return False
     
     def getState(self):

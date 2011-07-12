@@ -1,7 +1,7 @@
 [Instance1]
-ip_address = 10.141.3.133
-dns_name = 10.141.3.133
-id = 40
-image_id = 40
+ip_address = 10.141.3.136
+dns_name = 10.141.3.136
+id = 43
+image_id = 43
 type = m1.small
 

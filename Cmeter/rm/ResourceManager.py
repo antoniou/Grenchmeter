@@ -196,7 +196,7 @@ class ResourceManager:
                     self.reservations.append(instancesReserved)
         
         for instance in self.instances:
-            vmInstance = VMInstance.VMInstance(instance, self.configurationManager)
+            vmInstance = VMInstance.EC2Instance(instance, self.configurationManager)
             self.vmInstancesList.append(vmInstance)
         
             

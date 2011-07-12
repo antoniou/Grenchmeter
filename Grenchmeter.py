@@ -46,7 +46,7 @@ import GrenchmarkController
 import analyze
 from ec2bd import Cmeter
 
-DEFAULT_CONFIG_FILE   = 'Cmeter/config/one.config'
+DEFAULT_CONFIG_FILE   = 'Cmeter/config/das4.config'
 DEFAULT_WORKLOAD_FILE = 'Grenchmark/wl-desc.in'
 WORKLOAD_OUTDIR       = 'wload_out'
 
@@ -160,18 +160,18 @@ def main(argv):
     workloadOutDir   = WORKLOAD_OUTDIR
     Grenchmark, cMeter, workloadConfig = initServices(argv, workloadOutDir)
     
-    Grenchmark.generateWorkload({"--outdir":workloadOutDir}, useArrivalDistribution = False)
-    
-    submitWorkloadDedicated(Grenchmark, cMeter)
-    
-    if workloadConfig.systemUtilizationMode():
-        generateFixedUtilizationWorkload(Grenchmark, workloadOutDir)
-        
-    submitWorkload(Grenchmark, cMeter)
-    
-    analyzeData()
-    
-    cMeter.stopDaemon()
+#    Grenchmark.generateWorkload({"--outdir":workloadOutDir}, useArrivalDistribution = False)
+#    
+#    submitWorkloadDedicated(Grenchmark, cMeter)
+#    
+#    if workloadConfig.systemUtilizationMode():
+#        generateFixedUtilizationWorkload(Grenchmark, workloadOutDir)
+#        
+#    submitWorkload(Grenchmark, cMeter)
+#    
+#    analyzeData()
+#    
+#    cMeter.stopDaemon()
     
     #sendExperimentCompletionEmail(cMeter.configurationManager.getEmail())    
 
